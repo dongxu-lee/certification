@@ -1,0 +1,1384 @@
+.pop-margin-top-1{
+	display: none;
+	margin: 20px auto
+}
+.div-background{
+	background: #D8EBFA;
+}
+
+.btn-outline{
+	    height: 20px !important;
+	    font-size: 12px !important;
+        font-weight: normal !important;
+        padding: 0px 5px !important;
+}    
+.btn-primary{ 
+    line-height: normal ; 
+	padding: 0px 2px  !important;
+    font-size: 12px  !important;
+    border-radius: 4px  !important;
+    height: 24px  !important;
+    background-color: #096AC6 !important;
+    border:0px;
+}
+.btn-viewkey{ 
+	padding: 0px 10px !important;
+    font-size: 12px !important;
+    /* border-radius: 180px !important; */
+    height: 18px !important;
+    color: #fff !important;
+    background-color: #64a5eb !important;
+    /* border-color: #64a5eb !important; */
+    line-height: normal !important; 
+}
+.itswInput-30 {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+.readonly-block{
+	background-color: #C1C1C1 !important;
+}
+.itswInput-54{
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+}
+.itswInput-54 input[type='text']{
+	height: 26px;
+}
+.content-left button:hover,.content-left a:hover{
+	 filter:alpha(opacity=80);  
+      -moz-opacity:0.8;  
+      -khtml-opacity: 0.8;  
+       opacity: 0.8; 
+}
+.pop-margin-top-auto{
+	width: auto !important;
+}
+
+.margin-top-auto{
+	margin-top: auto;
+}
+
+
+.input-readonly{
+	/* readonly:expression(this.readOnly=true);
+	background-color: #C1C1C1 !important; */
+}
+
+.module-margin{
+	margin-top: 0px !important;
+}
+
+body{
+    /* background: #c1dff9; */
+    background: #F5F5F5;
+    width: 100%;
+    height:99%;
+    overflow-y: scroll;
+   /*  background-color: #e6e6e6 !important; */
+    font-size: 12px !important;
+}
+.bor-left{
+    border-left: 1px solid #000000;
+   
+}
+#taxTable .no-records-found,#taxTotalTable  .no-records-found{
+	display:none;
+}
+.bor-right{
+    border-right: 1px solid #000000;
+}
+
+.border-row{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #646464;
+    margin-top: -1px;
+}
+
+.border-toprow{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #646464;
+}
+
+.control-label{
+    color: #000000;
+    line-height:16px;
+}
+.col-sm-12-1 {
+    width: 100%;
+    position: relative;
+    float: left;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control
+{
+	background-color: #ebebeb !important;
+}
+.col-sm-12-1 .input-group{
+	display:block;
+}
+.itswInput>.input-group>input{
+	border: 1px solid #828282 !important;
+}
+input[type="text"]{
+    line-height:12px;
+    font-size: 12px;
+    color: #3c3c3c;
+    text-align: left;
+    border: 1px solid #828282;
+}
+
+.col-sm-2-1 {
+    width: 50%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+.itswLable-1{
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal !important;
+    text-align: right;
+}
+.itswLable-2{
+    width: 72px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+    font-family: "Microsoft YaHei" ! important;
+    color: #000;
+}
+.itswInput-1,.itswInput-2,.itswInput-3,.itswInput-4,.itswInput-5,.itswInput-6,.itswInput-7,.itswInput-8,.itswInput-9,.itswInput-10,.itswInput-11,.itswInput-12,.itswInput-25,.feeRate1
+,.feeRate2,.feeRate3,.insurRate,.insurRate1,.insurRate2,.input-note,.input-note1,.goodlist-line,.goodlist-line1,.itswInput-41{
+    display: inline-block;
+    vertical-align: top;
+}
+.itswInput-2-R{
+    width: 75%;
+    display: inline-block;
+    vertical-align: top;
+}
+.col-sm-3-1 {
+    width: 33.33333333%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+
+.itswLable-3{
+   /*  width: 48%; */
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+}
+.col-sm-4-1 {
+    width: 25%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+
+.col-sm-4-2 {
+    width: 33%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+
+.itswLable-4{
+   /*  width: 51%; */
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+}
+.col-sm-5-1 {
+    width: 20%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.col-sm-8-1 {
+    width: 60%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+.itswLable-5{
+    /* width: 47.5%; */
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+}
+.itswInput-30{
+   	width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+.itswInput-40{
+   	width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.itswInput-50{
+   	width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.col-sm-6-1 {
+    width: 16.666666%;
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+
+.itswLable-6{
+  /*   width: 31%; */
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+}
+.position-dec-head{
+	width: 96.2%;
+    position: absolute;
+    z-index: 50;
+    left: 100.3%;
+    padding: 2px 0px;
+}
+.itswLable-2word{
+    width: 24px;
+     display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    /* text-align: right; */
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.itswLable-3word{
+    width: 36px;
+     display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    /* text-align: right; */
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.itswLable-5word{
+    width: 60px;
+     display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    /* text-align: right; */
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.itswLable-6word{
+    width: 72px;
+     display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    /* text-align: right; */
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.itswLable-7word{
+    width: 78px;
+     display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.itswLable-8word{
+    width: 94px;
+     display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+ /*    float:right; */
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.pop-margin-top-rel-attr{
+	width: auto !important;
+}
+
+.btn-dec{
+	width: 13%;
+	background-color:#64a5eb
+}
+
+.btn-dec-main{
+	background-color:#64a5eb;
+	float:left;
+}
+
+.btn-dec-2{
+	width: 30%;
+	background-color:#64a5eb
+}
+
+
+.dec_trn_head_option {
+}
+.dec_trn_head .dec_trn_head_hidden  {
+	display:none;
+}
+
+.rmft_fcb_tax_hidden  {
+/* 	display:none; */
+}
+
+.table-fixed {
+    table-layout: fixed;
+    word-break:break-all;
+    word-wrap:break-all;
+}
+
+.layui-layer-tips i.layui-layer-TipsT {
+	bottom: -8px;
+	display:none;
+}
+
+.layui-layer-tips i.layui-layer-TipsB {
+	top: -8px;
+	display:none;
+}
+.layui-layer-tips i.layui-layer-TipsR {
+	left: -8px;
+	display:none;
+}
+
+.layui-layer-tips i.layui-layer-TipsL {
+	right: -8px;
+	display:none;
+}
+
+body .layerCss .layui-layer-btn a{
+    margin: 0 20px !important;
+}
+
+.itswLable-good{
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+
+.decDocBatch {
+	width: 280px;
+	border: 1px solid #2BB7E4;
+	height: 25px;
+	margin: 10px auto;
+}
+
+#decDocBatchBar {
+	display: block;
+	background: #2BB7E4;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 25px;
+	color: #FFF;
+}
+.div-head-row{
+	position: fixed;
+	height: 28px;
+	width: 100%;
+	z-index: 999;
+    background: #F5F5F5;
+    padding:2px 0px;
+}
+.content-left{
+	float: left;
+}
+.head-line{
+	height: 28px;
+	padding: 5px 6px;
+}
+.head-line label{
+	width: 85px;
+	float: left;
+	padding-right: 1px;
+}
+.head-line input[type='text']{
+	height: 16px;
+	border: 1px #989898;
+	margin-left:2px;
+	width: 182px;
+	float: left;
+}
+.code-name{
+	width:297px;
+}
+.headinfo-line{
+	width:97px;
+}
+.headinfo-line1{
+	width:112px;
+}
+.headinfo-line2{
+	width:75px;
+}
+.p1{
+	padding:0px;
+}
+.p2{
+	padding-right:0px;
+}
+.input-btn{
+    width: 100%;
+    background: #FFF;
+    color: #0969C8;
+    border: 1px;
+    border-style: solid;
+    padding: 0px;
+    border-color: #096AC6;
+    border-radius: 6px;
+}
+.input-note-label{
+	height: 29px;
+}
+.list-table-btn{
+	margin-left: 0px !important;
+    height: 18px !important;
+    background-color: #fff !important;
+    border-radius: 4px !important;
+    color: #096AC6 !important;
+    border: solid 1px #d2d2d2!important;
+    margin-left: 2px !important;
+}
+.img-goodsmemory{
+	width: 17px;
+	margin-left:3px;
+	margin-top: 3px;
+}
+.goodlist-row1{
+	padding-top: 1px;
+}
+
+.itswLable-good1{
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    text-align: right;
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+.div-container{
+	float: left;
+	margin-left:2px;
+}
+.panel-body{
+	border:none ;
+    padding:0px 0px 2px 0px !important;
+    position: relative;
+}
+#cus_dec_license{
+	margin-top:2px;
+}
+#cus_dec_container,#cus_dec_license{
+	width:98%;
+	padding:0px 2px;
+}
+.calculate-price{
+ 	width: 107.8%;
+ 	margin-top: 4px;
+}
+th{
+	padding: 0px !important;
+	font-size: 12px!important;
+	color: #333!important;
+	background-color: #e7eaec!important;
+	height:30px!important;
+}
+.th-inner  span{
+	color: #fff;
+}
+.body-css{
+	padding:0px 2px;
+}
+.voyageNo-css{
+	float: left;
+}
+.layui-layer-title{
+	background:#0969C8 !important;
+    color: #fff !important;
+}
+.bor-div{
+    border: solid 1px #0a69c8 !important;
+}
+label{
+	margin:0px !important;
+}
+.upperCase{
+	width: 16px;
+    background-color: #096AC6;
+    color: #FFFFFF;
+    padding: 0px;
+    border: 0px;
+    margin-left: 2px;
+    float: right;
+}
+.input-css-1{
+	float:left;
+}
+.head-content{
+	padding:1px 0px;
+	margin: 0px !important;
+}
+.div-promiseItem-css {
+	background: #fff;
+	display: none;
+	padding: 6px 44px;
+}
+.div-cusRemark-css{
+	background: #fff;
+	display: none;
+	padding: 14px;
+}
+.div-cusRemark-css-item{
+	float: left;
+	width: 50%;
+	padding-left: 60px;
+	margin-top: 23px;
+}
+.div-cusRemark-css-item label{
+	margin-left: 10px !important;
+}
+.div-promiseItem-css >.col-sm-12{
+	margin-top:14px;
+}
+@media  screen and (min-width: 750px) and (max-width: 1099px){
+ 	.body-css{
+		min-width: 955px;
+	} 
+	.content-left{
+		width: 73.5%;
+	}
+	.div-container{
+		width: 22%;
+	}
+	.itswInput-1{
+	  	width: 24%;
+	}
+	.itswInput-4{
+	    width: 66.3%;
+	}
+	.itswInput-5{
+ 		width: 55%;
+	}
+	.itswInput-25{
+   	    width: 25%;
+	}
+	.itswInput-10 {
+	   width: 13.2%;
+	}
+	.itswInput-2{
+  		width: 77.5%;
+	}
+	.input-css-1{
+		width: 89.4%;
+	}
+	.itswInput-8{
+		width: 59%;
+	}
+	.voyageNo-css{
+		width: 93%;
+	}
+	.headinfo-line3{
+		 width: 86%;
+	}
+	.feeRate1{
+	    width: 17%;
+	}
+	.feeRate2{
+		width: 21%;
+	}
+	.feeRate3{
+		width: 13.5%;
+	}
+	.insurRate{
+		width: 20%;
+	}
+	.insurRate1{
+		width: 14.5%;
+	}
+	.input-note{
+		width: 79.2%;
+	}
+	.input-note1{
+		width: 76.4%;
+	}
+	.div-table{
+		width: 100% !important;
+	}
+	.itswLable-good{
+    	width: 68px;
+	}
+	.goodlist-line{
+		width: 46%;
+	}
+	.goodlist-line1{
+		width: 81.5%;
+	}
+	.itswInput-3{
+   	 	width: 73%;
+	}
+	.itswInput-41{
+		width: 25%;
+	}
+	.div-container{
+		width: 26%;
+	}
+	.itswInput-7{
+	    width: 58%;
+	}
+	.containerNo-css{
+		width: 85%;
+	}
+	.itswInput-6{
+   		width: 55%;
+	}
+	.itswInput-9{
+		width: 38.7%;
+	}
+	.itswInput-11{
+		width: 51%;
+	}
+	.itswInput-12{
+		width: 49.5%;
+	}
+	.insurRate2{
+		width: 14%;
+	}
+	.itswLable-good1{
+		width: 68%;
+	}
+	.module-margin{
+		padding-right:1px;
+	}
+	.rec-notes-content{
+		width: 72.2%;
+	}
+}
+@media  screen and (min-width: 1100px) and (max-width: 1365px){
+ 	.body-css{
+		min-width: 985px;
+	} 
+	.content-left{
+		width: 77.5%; 
+	}
+	.div-container{
+		width: 22%;
+	}
+	.itswInput-1{
+	  width: 23.3%;
+	}
+	.itswInput-4{
+	  width: 70%;
+	}
+	.itswInput-5{
+ 		width: 62.5%;
+	}
+	.itswInput-25{
+   	    width: 25%;
+	}
+	.itswInput-10 {
+	    width: 14.6%;
+	}
+	.itswInput-2{
+  		width: 78.6%;
+	}
+	.input-css-1{
+		width: 94.4%;
+	}
+	.itswInput-8{
+		width: 64%;
+	}
+	.voyageNo-css{
+		 width: 86%;
+	}
+	.headinfo-line3{
+		 width: 71%;
+	}
+	.feeRate1{
+	    width: 17%;
+	}
+	.feeRate2{
+		width: 26.8%;
+	}
+	.feeRate3{
+		width: 17.5%;
+	}
+	.insurRate{
+		width: 24%;
+	}
+	.insurRate1{
+		width: 18.1%;
+	}
+	.input-note{
+		width: 82.3%;
+	}
+	.input-note1{
+		width: 79.6%;
+	}
+	.div-table{
+		width: 100% !important;
+	}
+	.itswLable-good{
+    	width: 68px;
+	}
+	.goodlist-line{
+		width: 53%;
+	}
+	.goodlist-line1{
+		width: 82.5%;
+	}
+	.itswInput-3{
+   	 	width: 76.5%;
+	}
+	.itswInput-41{
+		width: 25%;
+	}
+	.div-container{
+		width: 22%;
+	}
+	.itswInput-7{
+	    width: 58%;
+	}
+	.containerNo-css{
+		width: 85%;
+	}
+	.itswInput-6{
+   		width: 55%;
+	}
+	.itswInput-9{
+		width: 40%;
+	}
+	.itswInput-11{
+		width: 57%;
+	}
+	.itswInput-12{
+		width: 59%;
+	}
+	.insurRate2{
+		width: 13.5%;
+	}
+	.itswLable-good1{
+		width: 61%;
+	}
+	.position-dec-head{
+		width:77%;
+	}
+	.rec-notes-content{
+		width: 72.1%;
+	}
+	.td-title-align1{
+		padding-right:2px;
+	}
+}
+@media  screen and (min-width: 1366px) and (max-width: 1599px){
+   	.body-css{
+		min-width: 1146px;
+	}
+	.content-left{
+	width: 77.5%; 
+	}		
+	.div-container{
+		width: 22%;
+	}
+	.itswInput-1{
+	   width: 23.6%;
+	}
+	.itswInput-4{
+	   width: 76.3%;
+	}
+	.itswInput-5{
+ 		width: 63.5%;
+	}
+	.itswInput-25{
+   	    width: 25%;
+	}
+	.itswInput-10 {
+	    width: 16.6%;
+	}
+	.itswInput-2{
+  	   width: 82.7%;
+	}
+	.input-css-1{
+		width: 95.6%;
+	}
+	.itswInput-8{
+		width: 66%;
+	}
+	.voyageNo-css{
+		width: 89%;
+	}
+	.headinfo-line3{
+		width: 79%;
+	}
+	.feeRate1{
+	    width: 17%;
+	}
+	.feeRate2{
+		width: 27%;
+	}
+	.feeRate3{
+		width: 19.5%;
+	}
+	.insurRate{
+		width: 23.8%;
+	}
+	.insurRate1{
+		width: 20%;
+	}
+	.input-note{
+		width: 85.6%;
+	}
+	.input-note1{
+		width: 83.5%;
+	}
+	.div-table{
+		width: 100% !important;
+	}
+	.itswLable-good{
+    	width: 68px;
+	}
+	.goodlist-line{
+		width: 60%;
+	}
+	.goodlist-line1{
+		width: 86.2%;
+	}
+	.itswInput-3{
+   	 	width: 79.9%;
+	}
+	.itswInput-41{
+		width: 39%;
+	}
+	.div-container{
+		width: 22%;
+	}
+	.itswInput-7{
+	    width: 62%;
+	}
+	.containerNo-css{
+		width: 90%;
+	}
+	.itswInput-6{
+   		width: 56.6%;
+	}
+	.itswInput-9{
+		width: 42%;
+	}
+	.itswInput-11{
+		width: 65.3%;
+	}
+	.itswInput-12{
+		 width: 66.3%;
+	}
+	.insurRate2{
+		width: 22.3%;
+	}
+	.itswLable-good1{
+		width: 51%;
+	}
+	.position-dec-head{
+		width:77%;
+	}
+	.rec-notes-content{
+		width: 72.1%;
+	}
+	.td-title-align1{
+		padding-right:2px;
+	}
+}
+@media  screen and (min-width: 1600px) {
+ 	 .body-css{
+		min-width: 1700px;
+	}
+	.content-left{
+	width: 77.5%; 
+	}
+	.div-container{
+		width: 22%;
+	}
+	.itswInput-1{
+	   width: 23.9%;
+	}
+	.itswInput-4{
+	    width: 79.7%;
+	}
+	.itswInput-5{
+ 		width: 75%;
+	}
+	.itswInput-25{
+   	    width: 25%;
+	}
+	.itswInput-10 {
+	    width: 18%;
+	}
+	.itswInput-2{
+  	    width: 85.7%;
+	}
+	.input-css-1{
+		width: 96.6%;
+	}
+	.itswInput-8{
+		width: 77%;
+	}
+	.voyageNo-css{
+		width: 92%;
+	}
+	.headinfo-line3{
+		width: 84%;
+	}
+	.feeRate1{
+	    width: 17%;
+	}
+	.feeRate2{
+		width: 38.6%;
+	}
+	.feeRate3{
+		width: 19%;
+	}
+	.insurRate{
+		width: 36.8%;
+	}
+	.insurRate1{
+		width: 19.3%;
+	}
+	.input-note{
+		width: 87.9%;
+	}
+	.input-note1{
+		width: 86.5%;
+	}
+	.div-table{
+		width: 100% !important;
+	}
+	.itswLable-good{
+    	width: 68px;
+	}
+	.goodlist-line{
+		width: 72%;
+	}
+	.goodlist-line1{
+		width: 88.2%;
+	}
+	.itswInput-3{
+   	 	width: 85.8%;
+	}
+	.itswInput-41{
+		width: 39%;
+	}
+	.itswInput-7{
+	   width: 68%;
+	}
+	.containerNo-css{
+		width: 92.5%;
+	}
+	.itswInput-6{
+   		width: 61.5%;
+	}
+	.itswInput-9{
+		width: 43.3%;
+	}
+	.itswInput-11{
+		width: 71.2%;
+	}
+	.itswInput-12{
+		width: 71.7%;
+	}
+	.insurRate2{
+		width: 15.3%;
+	}
+	.itswLable-good1{
+		width: 51%;
+	}
+	.position-dec-head{
+		width:77%;
+	}
+	.rec-notes-content{
+		width: 72.1%;
+	}
+	.td-title-align1{
+		padding-right:2px;
+	}
+}
+
+.upperCheckbox{
+	float: right;
+    margin: auto !important;
+}
+.position-dec-head .row{
+	    padding-left: 32px;
+}
+@media  screen and (max-height: 900px) {
+	#cus_dec_list_table_div .fixed-table-container{
+  		height: 290px !important;  
+	}
+	.fixed-table-toolbar .dropdown-menu {
+ 	   max-height: 290px;
+	}
+	.div-container .fixed-table-container{
+  		height: 240px !important;  
+	}
+	input[type="text"]{
+		height: 22px;
+	}
+	.upperCheckbox{
+		height: 22px !important;
+	}
+
+	.div-head{
+		height: 28px;
+	}
+	.input-btn{
+	     height: 22px;
+	}
+	.position-dec-head{
+         top: 644px;
+    }	
+   	.upperCase{
+   		height: 22px !important;
+    }
+    #backwardBtn{
+        background: url(../../static/css/img/backward.png);
+    	background-size: 16px 22px;
+    }
+    .itswRow {
+   		margin-top: 1px !important;
+    }
+    .input-note{
+		height:22px;
+	}
+	textarea.form-control {
+		height:22px;
+		line-height: 22px;
+	}
+	.line-left{
+		line-height:22px;
+	}
+}
+@media  screen and (max-height: 735px) {
+	.fixed-table-container .bs-checkbox .th-inner {
+    	padding: 2px 0px;
+	}
+	.fixed-table-toolbar .dropdown-menu {
+ 	   max-height: 215px;
+	}
+	#cus_dec_list_table_div .fixed-table-container{
+  		height: 215px !important;  
+	}
+	.div-container  .fixed-table-container{
+  		height: 175px !important;  
+	}
+	.upperCheckbox{
+		height: 15px !important;
+	}
+	.layui-layer-tips .layui-layer-content{
+	    line-height: 18px !important;
+    	padding: 0px 10px !important;
+	}
+	.autocompleter-item {
+	    padding: 0px 12px;
+	    font-size: 12px;
+	}
+	/* input[type="text"]{
+		height: 18px;
+	} */
+	.div-head{
+		height: 22px;
+	}	
+	.input-btn{
+	     height: 18px;
+	}
+	.position-dec-head{
+    	top: 496px;
+    }
+	.upperCase{
+   		height: 16px !important;
+    }
+    #backwardBtn{
+        background: url(../../static/css/img/backward.png);
+    	background-size: 16px 16px;
+    }
+     .itswRow {
+        margin-top: 0px !important;
+	} 
+	.input-note{
+		height:18px;
+	}
+	textarea.form-control {
+		height:18px;
+		font-size:12px;
+		line-height: 16px;
+	}
+	.fixed-table-container tbody td .th-inner, .fixed-table-container thead th .th-inner {
+	    line-height: 16px;
+	}
+	.fixed-table-footer, .fixed-table-header {
+     	height: 30px; 
+	}
+	.line-left{
+		line-height:18px;
+	}
+}
+
+@media  screen and (max-height: 600px) {
+	.fixed-table-container .bs-checkbox .th-inner {
+    	padding: 2px 0px;
+	}
+	.fixed-table-toolbar .dropdown-menu {
+	    max-height: 100px;
+	}
+	#cus_dec_list_table_div  .fixed-table-container{
+  		height: 100px !important;  
+	}
+	.div-container  .fixed-table-container{
+  		height: 117px !important;  
+	}
+	.upperCheckbox{
+		height: 15px !important;
+	}
+	.layui-layer-tips .layui-layer-content{
+	    line-height: 18px !important;
+    	padding: 0px 10px !important;
+	}
+	.autocompleter-item {
+	    padding: 5px 6px;
+	    font-size: 12px;
+	}
+	/* input[type="text"]{
+		height: 18px;
+	} */	 
+	.div-head{
+		height: 22px;
+	}	
+	.input-btn{
+	     height: 18px;
+	}
+	.position-dec-head{
+    	top: 380px;
+    }
+	.upperCase{
+   		height: 16px !important;
+    }
+    #backwardBtn{
+        background: url(../../static/css/img/backward.png);
+    	background-size: 16px 16px;
+    }
+     .itswRow {
+        margin-top: 0px !important;
+	} 
+	.input-note{
+		height:18px;
+	}
+	textarea.form-control {
+		height:18px;
+		font-size:12px;
+		line-height: 16px;
+	}
+	.fixed-table-container tbody td .th-inner, .fixed-table-container thead th .th-inner {
+	    line-height: 16px;
+	}
+	.fixed-table-footer, .fixed-table-header {
+     	height: 25px; 
+	}
+	.line-left{
+		line-height:18px;
+	}
+}
+
+form {
+	background:#ffffff;
+	margin-bottom: 0px;
+}
+
+.nav-tabs > li > a {
+    padding: 3px 7px !important;
+}
+
+.fixed-table-body {
+    background: #f5f5f5;
+	height: 100%;
+}
+
+textarea.form-control {
+	border: 1px solid #828282;
+}
+.div-head{
+	padding: 1px 0px;
+}
+nav.page-tabs {
+    background-color: #e1f0ff !important;
+}
+
+.itswLable-10word{
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal !important;
+    font-family: "Microsoft YaHei" ! important;
+    font-size:10;
+    color: #000;
+}
+table {
+	border-collapse: collapse;
+}
+table, td, th {
+	border: 1px solid #ccc;
+	font-size: 12px;
+	height: 30px;
+	max-height: 22px;
+}
+
+/* #cus_dec_head_form table input,#cus_dec_list_form table input{
+	border: 0px;
+	font-size: 12px;
+} */
+span{
+	font-size: 12px;
+}
+table input{
+	border: 0px !important;
+	font-size: 12px;
+}
+#cus_dec_head_form  input[type='checkbox'],#cus_dec_container_form  input[type='checkbox']{
+	margin-top:1px !important;
+}
+.td-title{
+	width: 12%;
+}
+.td-title-align{
+	text-align: right;
+    padding-right: 2px;
+}
+.td-content{
+	width: 13% !important;
+}
+.td-content1{
+	width: 84%;
+}
+.td-content2{
+	width: 28%;
+}
+.td-content3{
+ 	width: 9%;
+}
+.td-title4{
+	width: 8%;
+}
+.td-content4{
+ 	width: 20%;
+}
+.input-group{
+	width:100%;
+}
+.line-left{
+	border-left: 1px solid #000 !important;
+}
+.line-right{
+	border-right: 1px solid #000 !important;
+}
+.bor-line{
+	border: 1px solid;
+	border-bottom: 0px;
+}
+.f1{
+	float:left;
+}
+.td-goodlist{
+	width:10%;
+}
+.td-goodlist1{
+	width:60%;
+}
+.td-goodlist2{
+	width:20%;
+}
+.td-goodlist3{
+	width:30%;
+}
+.td-goodlist4{
+	width:40%;
+}
+.percent-8{
+	width:7.5% !important;
+}
+.percent-26{
+	width:26% !important;
+}
+.percent-14{
+	width:14% !important;
+}
+.percent-59{
+	width:59% !important;
+}
+.entryTypeName-css{
+	width:16%;
+}
+.noteS-css{
+	width:12.4%;
+}
+.noteS-css1{
+	width: 100%;
+}
+.noteS-css2{
+	width: 84%;
+}
+.noteS-css3{
+	width: 22% !important;
+}
+.decHead-css{
+	height: 18px !important;
+    width: 18px !important;
+    border-radius: 10px !important;
+    padding: 2px !important;
+    float: right;
+}
+.position-dec-head table{
+	width:36%;
+}
+.rec-notes-title{
+	width: 14%;
+}
+.calculate-price :first-child{
+	background: #F4F9FF;
+}
+.td-title-align1{
+	text-align: right;
+}
+#cus_dec_list_table_div .fixed-table-body::-webkit-scrollbar{
+    height: 12px;
+}
+#cusDecLicenseQueryResult  .fixed-table-container{
+  		height: 170px !important;  
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+	opacity: .50;
+}
+ html input[disabled]{
+ 	    background-color: #ebebeb !important;
+ }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- targetRuntime: ?????????. MyBatis3Simple: ?????CRUD. ??? MyBatis3: 
+		??QBC(Query By Criteria)???CRUD. ???. -->
+	<context id="DB2Tables" targetRuntime="MyBatis3Simple">
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+	     connectionURL="jdbc:mysql://172.100.3.171:3306/dec" userId="root"
+	     password="root">
+        </jdbcConnection> -->
+        
+         <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+	     connectionURL="jdbc:oracle:thin:@172.100.2.168:1521:orcl" userId="nmg_iptuser"
+	     password="passw0rd">
+	     </jdbcConnection>
+		
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="true" />
+		</javaTypeResolver>
+
+		<!-- javaBean????? -->
+		<javaModelGenerator targetPackage="cn.gov.customs.online.pojo"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- SQL????????? -->
+		<sqlMapGenerator targetPackage="mapping"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- Mapper??????? -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.gov.customs.online.dao" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+        
+<!--        <table tableName="CSPOO_ENT_RECORD"  domainObjectName="CspooEntRecord"></table>-->
+<!--		<table tableName="CSPOO_ENT_RECORD_ATTACH"  domainObjectName="CspooEntRecordAttach"></table>-->
+		<table tableName="CSPOO_AGENCY_ENT_INFO"  domainObjectName="CspooAgencyEntInfo"></table>
+		<table tableName="CSPOO_REPORTER_INFO"  domainObjectName="CspooReporterInfo"></table>
+	</context>
+</generatorConfiguration>

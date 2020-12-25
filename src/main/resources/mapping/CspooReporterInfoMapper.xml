@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.customs.online.dao.CspooReporterInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.gov.customs.online.pojo.CspooReporterInfo">
+    <id column="NO" jdbcType="VARCHAR" property="no" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="IDNO" jdbcType="VARCHAR" property="idno" />
+    <result column="TEL" jdbcType="VARCHAR" property="tel" />
+    <result column="POWER_OF_ATTORNEY" jdbcType="VARCHAR" property="powerOfAttorney" />
+    <result column="IDIMG" jdbcType="VARCHAR" property="idimg" />
+    <result column="ELEC_SIGN_HANDWRITING" jdbcType="VARCHAR" property="elecSignHandwriting" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="INDB_TIME" jdbcType="DATE" property="indbTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CSPOO_REPORTER_INFO
+    where NO = #{no,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.gov.customs.online.pojo.CspooReporterInfo">
+    insert into CSPOO_REPORTER_INFO (NO, NAME, IDNO, 
+      TEL, POWER_OF_ATTORNEY, IDIMG, 
+      ELEC_SIGN_HANDWRITING, STATE, INDB_TIME, 
+      UPDATE_TIME)
+    values (#{no,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{idno,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{powerOfAttorney,jdbcType=VARCHAR}, #{idimg,jdbcType=VARCHAR}, 
+      #{elecSignHandwriting,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE}, 
+      #{updateTime,jdbcType=DATE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.gov.customs.online.pojo.CspooReporterInfo">
+    update CSPOO_REPORTER_INFO
+    set NAME = #{name,jdbcType=VARCHAR},
+      IDNO = #{idno,jdbcType=VARCHAR},
+      TEL = #{tel,jdbcType=VARCHAR},
+      POWER_OF_ATTORNEY = #{powerOfAttorney,jdbcType=VARCHAR},
+      IDIMG = #{idimg,jdbcType=VARCHAR},
+      ELEC_SIGN_HANDWRITING = #{elecSignHandwriting,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      INDB_TIME = #{indbTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where NO = #{no,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select NO, NAME, IDNO, TEL, POWER_OF_ATTORNEY, IDIMG, ELEC_SIGN_HANDWRITING, STATE, 
+    INDB_TIME, UPDATE_TIME
+    from CSPOO_REPORTER_INFO
+    where NO = #{no,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select NO, NAME, IDNO, TEL, POWER_OF_ATTORNEY, IDIMG, ELEC_SIGN_HANDWRITING, STATE, 
+    INDB_TIME, UPDATE_TIME
+    from CSPOO_REPORTER_INFO
+  </select>
+</mapper>

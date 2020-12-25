@@ -1,0 +1,49 @@
+<html>
+<link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+<link href="/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="/css/style.css?v=4.1.0" rel="stylesheet">
+<script src="/js/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/njcf_style.css">
+<body>
+
+<div id="plantMaterialDiv">
+    <form id="anplantInfoForm" onkeydown="if(event.keyCode==13){return false;};" autocomplete="off" novalidate="novalidate">
+
+        <div class="row itswRow">
+				<span class="itswTitle">
+					<i class="fa fa-edit"></i>&nbsp;企业备案必读
+				</span>
+            <div class="itswTitleLine"></div>
+        </div>
+        <div style="padding-left: 10%">
+            <span style="font-size: 16px"><B>在进行备案前，必须仔细阅读以下公告：</B></span>
+        </div>
+        <div style="text-align: center">
+            <div><p style="font-size: 20px;padding-top: 50px"><B>注意事项</B></p></div>
+            <div>
+                <p>一、本证书是原产地证申报企业已在海关登记的有效证件。</p>
+                <p>二、原产地证申报企业必须遵守原产地证申报有关法律法规，接受海关的监督管理，保证提供所需资料、证明文件的真实性。</p>
+                <p>三、海关对原产地证申报企业实行复查制度，逾期不参加复查或复查不合格的，本证书自动作废。</p>
+                <p>四、原产地证申报企业必须严格按照有关规定申报各类原产地证，并对证书项下的产品进行管理，使之符合相对应的原产地规则。</p>
+                <p>五、原产地证申报企业信息发生变更时，必须在变更之日起15日内向海关申报并办理相关变更手续。</p>
+            </div>
+            <div>
+                <span>倒计时</span><span id="time">10</span><span>秒</span>
+                <button id="btn-success" type="button" class="btn btn-success">我要备案</button>
+                <button id="btn-default" type="button" class="btn btn-default">暂不备案</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var s = setInterval(function () {
+            $("#time").text($("#time").text() * 1 - 1);
+            if($("#time").text() <= 0) {
+                clearInterval(s);
+            }
+        }, 1000);
+    })
+</script>
+</html>

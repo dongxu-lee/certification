@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原产地证电子管理系统</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/styleSecond.css" rel="stylesheet">
+
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/css/need/laydate.css" rel="stylesheet">
+    <link href="/css/skins/default/laydate.css" rel="stylesheet">
+    <link href="/js/layer/skin/default/layer.css" rel="stylesheet">
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/plugins/layer/laydate/laydate.js"></script>
+    <!--界面返填 -->
+    <script src="/js/jquery-formHelp.js"></script>
+    <!--界面校验-->
+    <script src="/js/jquery.validate.js"></script>
+    <!--layer-->
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/enter.js" type="text/javascript" charset="utf-8" async defer></script>
+
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- Bootstrap table -->
+    <script src="/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- bootstrap-select -->
+    <script src="/js/plugins/bootstrap-select/bootstrap-select.js"></script>
+    <!-- bootstrap-suggest -->
+    <script src="/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <!-- layerDate plugin javascript -->
+    <script src="/js/plugins/layer/laydate/laydate.js"></script>
+
+    <script src="/js/swutils/swUtil.js"></script>
+    <!--加签控件-->
+<!--    <script src="/js/client.js"></script>-->
+    <!-- storage -->
+    <script src="/js/plugins/storage/jquery.storageapi.min.js"></script>
+    <!-- 附件上传 -->
+    <script src="/js/jquery.form.js"></script>
+    <script src="/js/modal.js"></script>
+
+    <!-- 自定义js -->
+    <script src="/js/hplus.js?v=4.1.0"></script>
+    <script src="/js/contabs.js"></script>
+
+    <!-- 第三方插件 -->
+    <script src="/js/plugins/pace/pace.min.js"></script>
+
+    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/js/plugins/layer/layer.min.js"></script>
+
+
+
+
+</head>
+
+<body class="fixed-sidebar full-height-layout skin-1 gray-bg"
+      style="overflow: hidden">
+<div id="banner" style="width: 99%; height: 60px;">
+    <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation"
+             style="margin-bottom: 0; background-color: #096ac6; min-width: 1320px;">
+            <div class="navbar-header" style="height: 60px; line-height: 60px;">
+                <img src="/images/navbar-header.png"
+                     style="margin-left: 25px;"></div>
+            <div
+                    style="float: left;height:60px;min-width: 1192px;">
+                <div style="float: left;cursor: pointer;" onclick="window.location.href='/'">
+						<span
+                                style="color: #fff; font-family: SimHei; font-size: 20px; line-height: 30px; margin-left: 5px; margin-top: 10px; font-weight: bold; display: block;">互联网加海关</span>
+                    <span
+                            style="color: #fff; font-family: Microsoft YaHei; font-size: 10px; line-height: 10px; margin-left: 5px; display: block;">
+							Online Customs
+						</span>
+                </div>
+                <div style="float: left;">
+						<span
+                                style="color: #fff; font-family: Microsoft YaHei; font-size: 22px; line-height: 60px; margin-left: 20px; font-weight: bold;">|</span>
+                    <span
+                            style="color: #fff; font-family: Microsoft YaHei; font-size: 22px; line-height: 60px; margin-left: 15px; font-weight: bold;">原产地证电子管理系统</span>
+                </div>
+            </div>
+            <div style="height: 60px; width: 900px; position: fixed; top: 0; right: 0;">
+                <div
+                        style="float: right; display: inline; margin-top: 20px; margin-left: 10px;margin-right: 22px;">
+						<span
+                                style="color: #fff; font-family: Microsoft YaHei; font-size: 14px;">
+							<a
+                                    href="/logout" class="roll-nav roll-right"
+                                    style="color: #fff; font-family: Microsoft YaHei; font-size: 14px;cursor:pointer;">退出</a>
+						</span>
+                    <!--href=../sw_logout/logout-->
+                </div>
+                <div style="float: right; display: inline;margin-left: 15px;">
+                    <img src="/images/exit.png"></div>
+                <div
+                        style="float: right; display: inline; margin-top: 16px; margin-left: 20px;">
+						<span
+                                style="color: #fff; font-family: Microsoft YaHei; font-size: 20px;">|</span>
+                </div>
+
+
+                <div
+                        style="float: right; display: inline; margin-top: 20px; margin-left: 10px;">
+						<span
+                                style="color: #fff; font-family: Microsoft YaHei; font-size: 14px;">
+							<span>欢迎您，swbjop0114</span>
+							</span>
+                </div>
+                <div style="float: right; display: inline;">
+                    <img src="/images/person.png"></div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div id="wrapper" class="active">
+    <!--左侧导航开始-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="nav-close"> <i class="glyphicon glyphicon-trash-circle"></i>
+        </div>
+        <div class="sidebar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="#"> <i class="fa fa-cogs" style="width: 18px;text-align: center;"></i>
+                        <span
+                                class="nav-label" style="font-size: 16px;">原产地证电子管理系统</span>
+                        <span
+                                class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level nav-left">
+                        <li>
+                            <a menuid="sas01" class=""><span class="nav-label">企业备案</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li><a onclick="openModal()" menuid="entrecord01" class="J_menuItem" title="企业备案申请" data-index="01">企业备案申请</a></li>
+                                <li><a onclick="entrecordchange()" menuid="entrecord02" class="J_menuItem" title="企业备案变更申请" data-index="02">企业备案变更申请</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a menuid="sas02" class=""><span class="nav-label">信息维护</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li><a onclick="agencyent()" menuid="info01" class="J_menuItem" title="代理企业信息维护" data-index="01">代理企业信息维护</a></li>
+                                <li><a onclick="reporter()" menuid="info02" class="J_menuItem" title="申报员信息维护" data-index="02">申报员信息维护</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a menuid="sas02" class=""><span class="nav-label">产品预审</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li><a onclick="prereview()" menuid="pre01" class="J_menuItem" title="产品预审" data-index="01">产品预审</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a menuid="sas02" class=""><span class="nav-label">调查互动</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li><a onclick="surveyreaction()" menuid="reaction01" class="J_menuItem" title="调查互动" data-index="01">调查互动</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a menuid="sas02" class=""><span class="nav-label">综合查询</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level collapse" aria-expanded="false" style="height: 0px;">
+                                <li><a onclick="surveyappointnotice()" menuid="query01" class="J_menuItem" title="实地调查预约通知单查询" data-index="01">实地调查预约通知单查询</a></li>
+                                <li><a onclick="accept()" menuid="query02" class="J_menuItem" title="受理情况查询" data-index="02">受理情况查询</a></li>
+                                <li><a onclick="policy()" menuid="query03" class="J_menuItem" title="政策信息查询" data-index="03">政策信息查询</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--左侧导航结束-->
+    <!--右侧部分开始-->
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row content-tabs">
+            <a class="navbar-minimalize roll-nav J_tabExit" href="#">
+                <i
+                        class="fa fa-bars" style="margin-top: 12px;"></i>
+            </a>
+            <button class="roll-nav roll-left J_tabLeft">
+                <i class="fa fa-backward"></i>
+            </button>
+            <nav class="page-tabs J_menuTabs">
+                <div class="page-tabs-content">
+                    <a href="javascript:;" class="active J_menuTab"
+                       data-id="index">首页</a>
+                </div>
+            </nav>
+            <button class="roll-nav roll-right J_tabRight">
+                <i class="fa fa-forward"></i>
+            </button>
+            <div class="btn-group roll-nav roll-right">
+                <button class="dropdown J_tabClose" data-toggle="dropdown">
+                    关闭操作
+                    <span class="caret"></span>
+
+                </button>
+                <ul role="menu" class="dropdown-menu dropdown-menu-right">
+                    <li class="J_tabCloseAll">
+                        <a>关闭全部选项卡</a>
+                    </li>
+                    <li class="J_tabCloseOther">
+                        <a>关闭其他选项卡</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row J_mainContent" id="content-main">
+            <iframe class="J_iframe" id="iframe0" name="iframe0" width="100%" height="100%"
+                    src="notice" frameborder="0" data-id="123"
+                    seamless></iframe>
+        </div>
+    </div>
+
+    <!--右侧部分结束-->
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">点击后，后台判断企业是否备案申请，此处模拟后台判断：</h4>
+            </div>
+            <div class="modal-body">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked> 企业未备案
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">企业已备案
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="3">企业备案已通过
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="entrecord()">提交更改</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<script type="text/javascript">
+
+    //打开模态框
+    function openModal(){
+        $("#myModal").modal("show");
+    }
+
+    //监听iframe刷新
+    $("#iframe0").load(function (){
+        if($("#iframe0").attr("src") == "norecord") {
+            //确认备案，进入备案功能页面
+            var success = window.frames["iframe0"].document.getElementById("btn-success");
+            success.onclick=function () {
+                $('.J_iframe').attr("src", "entrecord");
+            }
+            //不备案，返回notice页面
+            var fail = window.frames["iframe0"].document.getElementById("btn-default");
+            fail.onclick=function () {
+                $('.J_iframe').attr("src", "notice");
+            }
+        }
+    });
+
+    function entrecord() {
+        //关闭模态框
+        $("#myModal").modal("hide");
+        //获取选中的radio
+        var aplNo=$('input:radio[name="optionsRadios"]:checked').val();
+        //判断当前企业是否备案
+        $.ajax({
+            url: "/entRecord/checkEntRecord?aplNo=" + aplNo,
+            contentType: "application/json",
+            //data: aplNo1,
+            dateType: "json",
+            type: "GET",
+            success: function(result) {
+                //TODO
+                switch (result.code) {
+                    case "1":
+                        //企业未备案
+                        //tab切换到注意事项页面，10s
+                        $('.J_iframe').attr("src", "norecord");
+                        // window.setTimeout(function(){
+                        //     $('.J_iframe').attr("src", "entrecord");
+                        // }, 10000);
+                        break;
+                    case "2":
+                        //企业已备案
+                        $('.J_iframe').attr("src", "entrecord");
+                        break;
+                    case "3":
+                        //企业备案审批通过
+                        $('.J_iframe').attr("src", "recorded");
+                        window.setTimeout(function(){
+                            $('.J_iframe').attr("src", "notice");
+                        }, 5000);
+                        break;
+                    case "MODULE_NOT_FOUND":
+                        //数据不对
+                }
+            }
+        })
+    }
+
+    function entrecordchange() {
+        $('.J_iframe').attr("src", "entrecordchange");
+    }
+
+    function agencyent() {
+        $('.J_iframe').attr("src", "agencyent");
+    }
+
+    function reporter() {
+        $('.J_iframe').attr("src", "reporter");
+    }
+
+    function prereview() {
+        $('.J_iframe').attr("src", "prereview");
+    }
+
+    function surveyreaction() {
+        $('.J_iframe').attr("src", "surveyreaction");
+    }
+
+    function surveyappointnotice() {
+        $('.J_iframe').attr("src", "surveyappointnotice");
+    }
+
+    function accept() {
+        $('.J_iframe').attr("src", "accept");
+    }
+    function policy() {
+        $('.J_iframe').attr("src", "policy");
+    }
+
+
+
+</script>
+
+</body>
+</html>

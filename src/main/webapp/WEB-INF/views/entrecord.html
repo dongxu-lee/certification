@@ -1,0 +1,386 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>原产地证功能页面</title>
+    <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <!--总Css-->
+    <link href="/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/css/need/laydate.css" rel="stylesheet">
+    <link href="/css/skins/default/laydate.css" rel="stylesheet">
+    <link href="/js/layer/skin/default/layer.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/css/njcf_style.css">
+
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <!--界面返填 -->
+    <script src="/js/jquery-formHelp.js"></script>
+    <!--界面校验-->
+    <script src="/js/jquery.validate.js"></script>
+    <!--layer-->
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/enter.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
+
+
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- Bootstrap table -->
+    <script src="/js/plugins/bootstrap-table/bootstrap-table.min-1.14.1.js"></script>
+    <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- bootstrap-select -->
+    <script src="/js/plugins/bootstrap-select/bootstrap-select.js"></script>
+    <!-- bootstrap-suggest -->
+    <script src="/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <!-- layerDate plugin javascript -->
+    <script src="/js/plugins/layer/laydate/laydate.js"></script>
+
+    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- storage -->
+    <script src="/js/plugins/storage/jquery.storageapi.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="/js/hplus.js?v=4.1.0"></script>
+
+
+    <style>
+        .btn_select {
+            padding: 0px 6px;
+            height: 22px;
+        }
+        .btn-white {
+            color: #868181 !important;
+        }
+        #proSLa {
+            background-color: white !important;
+        }
+        .non-empty {
+            background-color: lightgoldenrodyellow !important;
+        }
+    </style>
+    <style>.jhover{background: #07d; color:#fff}</style><style>.jhover{background: #07d; color:#fff}</style><style>.jhover{background: #07d; color:#fff}</style><style>.jhover{background: #07d; color:#fff}</style></head>
+<body>
+
+
+<!--基本情况start-->
+<div id="plantMaterialDiv">
+    <form id="anplantInfoForm" onkeydown="if(event.keyCode==13){return false;};" autocomplete="off" novalidate="novalidate">
+        <div class="row itswRow">
+            <div class="col-sm-12" style="padding: 0px 25px;position: fixed;z-index: 999;width: 100%;background-color: #ffffff;margin-left: 14px;">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-sm btn-primary" id="cspooEntRecordSave">
+                        <i class="fa fa-save"></i>&nbsp;暂存
+                    </button>
+                    <button class="btn btn-sm btn-primary " type="button" id="cspooEntRecordDelete">
+                        <i class="glyphicon glyphicon-trash"></i>&nbsp;删除
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary " id="cspooEntRecordDeclare" style="float: right">
+                        <i class="fa fa-upload"></i>&nbsp;申报
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row " style="margin-top: 30px;padding-left: 18px;"></div>
+
+        <div class="row itswRow">
+				<span class="itswTitle">
+					<i class="fa fa-edit"></i>&nbsp;基本情况
+				</span>
+            <div class="itswTitleLine"></div>
+        </div>
+        <table style="width: 95%;margin-left: 20px; margin-top: 10px" id="formTable">
+            <tbody><tr>
+                <td class="td-title td-title-align ">申请单号</td>
+                <td class="td-content"><input type="text" class=" form-control input-readonly" name="aplNo" id="aplNo" readonly="readonly"></td>
+                <td class="td-title td-title-align">企业备案编号</td>
+                <td class="td-content"><input type="text" class="form-control input-readonly" name="entMgrNo" id="entMgrNo" readonly="readonly"></td>
+                <td class="td-title td-title-align">备案状态</td>
+                <td class="td-content">
+                    <div class="input-group ">
+                        <input type="hidden" class=" form-control input-readonly" name="regState" id="regState" readonly="readonly">
+                        <input type="text" class=" form-control input-readonly" name="regStateName" id="regStateName" readonly="readonly">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td-title td-title-align">组织机构代码</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control input-readonly" name="ciqRegNo" id="ciqRegNo" readonly="readonly"></td>
+                <td class="td-title td-title-align">统一社会信用代码</td>
+                <td class="td-content" colspan="3">
+                    <input type="text" class=" form-control input-readonly" name="uniSocialCreditCode" id="uniSocialCreditCode" readonly="readonly">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;企业中文名称</td>
+                <td class="td-content" colspan="5">
+                    <input type="text" class="form-control non-empty" id="nameC" name="nameC">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align">企业英文名称</td>
+                <td class="td-content" colspan="5">
+                    <input type="text" class="form-control input-readonly" id="nameE" name="nameE">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;住所</td>
+                <td class="td-content" colspan="5">
+                    <input type="text" class="form-control non-empty" id="resC" name="resC">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align">英文住所</td>
+                <td class="td-content" colspan="5">
+                    <input type="text" class="form-control" id="resE" name="resE">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;企业性质</td>
+                <td class="td-content">
+                    <select class="form-control non-empty valid" style="" id="nature" name="nature" aria-invalid="false">
+
+                    </select>
+                </td>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;是否生产型企业</td>
+                <td class="td-content">
+                    <select class="form-control non-empty valid" style="" id="proEnt" name="proEnt" aria-invalid="false">
+                        <option value="P">请选择</option>
+                        <option value="Y">是</option>
+                        <option value="N">否</option>
+                    </select>
+                </td>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;工商注册地</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control" name="busiRegPla" id="busiRegPla" placeholder="参数查询">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;企业所属备案机关</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control" name="searchOrgCode" id="searchOrgCode" placeholder="参数查询">
+                </td>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;企业电子邮箱</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="entEmail" id="entEmail">
+                </td>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;法定代表人</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="legRep" id="legRep">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;法定代表人身份证号码或外国护照号码</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="legRepIdpassNo" id="legRepIdpassNo">
+                </td>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;法定代表人联系电话</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="legRepTel" id="legRepTel">
+                </td>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;联系人</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="contact" id="contact">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align"><i style="color: red;">*</i>&nbsp;联系手机</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="contactTel" id="contactTel">
+                </td>
+                <td class="td-title td-title-align">备注</td>
+                <td class="td-content" colspan="3">
+                    <input type="text" class=" form-control" name="remarks" id="remarks">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align">备案申请时间</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control" name="regAplDate" id="regAplDate">
+                </td>
+                <td class="td-title td-title-align">管理类别</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control non-empty" name="manageType" id="manageType">
+                </td>
+                <td class="td-title td-title-align">申报模式</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control" name="aplMode" id="aplMode">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align">签证机关</td>
+                <td class="td-content" colspan="5">
+                    <input type="text" class=" form-control" name="visaAgency" id="visaAgency">
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title td-title-align">领证机关</td>
+                <td class="td-content" colspan="5">
+                    <input type="text" class=" form-control" name="obtainAgency" id="obtainAgency">
+                </td>
+            </tr>
+            </tbody></table>
+
+        <div class="row " style="margin-top: 2px;padding-left: 18px;"></div>
+
+        <div class="row itswRow">
+    <span class="itswTitle">
+        <i class="fa fa-edit"></i>&nbsp;上传附件
+    </span>
+            <div class="itswTitleLine"></div>
+            <table class="table table-bordered" style="width: 95%;margin-left: 20px; margin-top: 10px">
+                <thead>
+                <tr>
+                    <th style="width: 10%">序号</th>
+                    <th style="width: 30%">附件类型</th>
+                    <th style="width: 30%">文件名称</th>
+                    <th style="width: 30%">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>营业执照</td>
+                    <td>营业执照.pdf</td>
+                    <td>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-open"></span>上传</button>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-save"></span>下载</button>
+                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span>删除</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>营业执照</td>
+                    <td>营业执照.pdf</td>
+                    <td>上传、下载、删除</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>营业执照</td>
+                    <td>营业执照.pdf</td>
+                    <td>上传、下载、删除</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </form>
+
+</div>
+
+<!--上传附件-->
+<div class="row " style="margin-top: 30px;padding-left: 18px;"></div>
+
+
+
+
+<div class="row " style="height: 20px;"></div>
+
+<div class="layui-layer-move"></div>
+<script type="text/javascript" src="https://app.singlewindow.cn/sat/swVersion.js?d=1608714724666"></script>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //企业性质
+        $.ajax({
+            url: "/entRecord/getAListOfBusinessProperties",
+            contentType: "application/json",
+            dateType: "json",
+            type: "GET",
+            success: function(result) {
+                for(var x in result.data) {
+                    $("#nature").append("<option>"+(result.data)[x]+"</option>");
+                }
+            }
+        })
+    });
+
+    $("#busiRegPla").click(function () {
+        alert("暂未开发");
+    });
+
+    $("#searchOrgCode").click(function () {
+        alert("暂未开发");
+    });
+
+    //实体类
+    var entRecord = {
+        "aplNo": $("#aplNo").val(),
+        "entMgrNo":$("#entMgrNo").val(),
+        "regState":$("#regState").val(),
+        "ciqRegNo":$("#ciqRegNo").val(),
+        "uniSocialCreditCode":$("#uniSocialCreditCode").val(),
+        "nameC":$("#nameC").val(),
+        "nameE":$("#nameE").val(),
+        "resC":$("#resC").val(),
+        "resE":$("#resE").val(),
+        "nature":$("#nature").val(),
+        "proEnt":$("#proEnt").val(),
+        "busiRegPla":$("#busiRegPla").val(),
+        "searchOrgCode":$("#searchOrgCode").val(),
+        "email":$("#entEmail").val(),
+        "legRep":$("#legRep").val(),
+        "legRepIdpassNo":$("#legRepIdpassNo").val(),
+        "legRepTel":$("#legRepTel").val(),
+        "contact":$("#contact").val(),
+        "contactTel":$("#contactTel").val(),
+        "note":$("#remarks").val(),
+        "regAplDate":$("#regAplDate").val(),
+        "manageType":$("#manageType").val(),
+        "aplMode":$("#aplMode").val(),
+        "visaAgency":$("#visaAgency").val(),
+        "obtainAgency":$("#obtainAgency").val()
+    };
+
+    var attach1 = {
+        "attachNo": "1"
+    };
+
+    var attach2 = {
+        "attachNo": "2"
+    };
+
+    var saveData = {
+        "cspooEntRecord" : entRecord,
+        "cspooEntRecordAttach" : [
+            attach1,
+            attach2
+        ]
+    }
+
+
+    //暂存
+    $("#cspooEntRecordSave").click(function () {
+        $.ajax({
+            url: "/entRecord/save",
+            contentType: "application/json",
+            dateType: "json",
+            type: "POST",
+            data: JSON.stringify(saveData),
+            success: function(result) {
+                console.log(result);
+            }
+        })
+    });
+
+    //删除
+    $("#cspooEntRecordDelete").click(function () {
+
+    });
+
+    //申报
+    $("#cspooEntRecordDeclare").click(function () {
+
+    });
+
+</script>
+</html>

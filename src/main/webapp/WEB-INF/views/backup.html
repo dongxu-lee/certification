@@ -1,0 +1,312 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>动植司注册页面</title>
+    <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <!--总Css-->
+    <link href="/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <link href="/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="/css/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/css/need/laydate.css" rel="stylesheet">
+    <link href="/css/skins/default/laydate.css" rel="stylesheet">
+    <link href="/js/layer/skin/default/layer.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/css/njcf_style.css">
+
+    <script src="/js/jquery.min.js?v=2.1.4"></script>
+    <!--界面返填 -->
+    <script src="/js/jquery-formHelp.js"></script>
+    <!--界面校验-->
+    <script src="/js/jquery.validate.js"></script>
+    <!--layer-->
+    <script src="/js/layer/layer.js"></script>
+    <script src="/js/enter.js" type="text/javascript" charset="utf-8" async="" defer=""></script>
+
+
+    <script src="/js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- Bootstrap table -->
+    <script src="/js/plugins/bootstrap-table/bootstrap-table.min-1.14.1.js"></script>
+    <script src="/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- bootstrap-select -->
+    <script src="/js/plugins/bootstrap-select/bootstrap-select.js"></script>
+    <!-- bootstrap-suggest -->
+    <script src="/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <!-- layerDate plugin javascript -->
+    <script src="/js/plugins/layer/laydate/laydate.js"></script>
+
+    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- storage -->
+    <script src="/js/plugins/storage/jquery.storageapi.min.js"></script>
+
+    <!-- 自定义js -->
+    <script src="/js/hplus.js?v=4.1.0"></script>
+
+
+    <style>
+        .btn_select {
+            padding: 0px 6px;
+            height: 22px;
+        }
+        .btn-white {
+            color: #868181 !important;
+        }
+        #proSLa {
+            background-color: white !important;
+        }
+    </style>
+    <style>.jhover{background: #07d; color:#fff}</style><style>.jhover{background: #07d; color:#fff}</style><style>.jhover{background: #07d; color:#fff}</style><style>.jhover{background: #07d; color:#fff}</style></head>
+<body>
+
+
+<!--基本信息start-->
+<!--进境植物繁殖材料隔离检疫圃page-->
+<div id="plantMaterialDiv">
+    <form id="anplantInfoForm" onkeydown="if(event.keyCode==13){return false;};" autocomplete="off" novalidate="novalidate">
+        <!--进境植物繁殖材料隔离检疫圃页面按钮-->
+        <div class="row itswRow">
+            <div class="col-sm-12" style="padding: 0px 25px;position: fixed;z-index: 999;width: 100%;background-color: #ffffff;margin-left: 14px;">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-sm btn-primary" id="cspooEntRecordSave">
+                        <i class="fa fa-save"></i>&nbsp;暂存
+                    </button>
+                    <button class="btn btn-sm btn-primary " type="button" id="cspooEntRecordDelete">
+                        <i class="glyphicon glyphicon-trash"></i>&nbsp;删除
+                    </button>
+                    <button type="button" class="btn btn-sm btn-primary " id="cspooEntRecordDeclare" style="float: right">
+                        <i class="fa fa-upload"></i>&nbsp;申报
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row " style="margin-top: 30px;padding-left: 18px;"></div>
+        <span id="redTips" style="color:red;display:none;">隔离场已备案。每次进口动物前，隔离场使用人需向海关提出对该隔离场的使用申请，获得《隔离场使用证》。</span>
+        <!-- 隐藏域 -->
+        <!-- 组织结构代码 -->
+        <input type="hidden" class="form-control" name="saicSysNo" id="saicSysNo">
+        <!-- 作业号 -->
+        <input type="hidden" class="form-control" name="taskSeqNo" id="taskSeqNo">
+        <!-- 申请类型 -->
+        <input type="hidden" class="form-control" name="busiType" id="busiType">
+
+        <div class="row itswRow">
+				<span class="itswTitle">
+					<i class="fa fa-edit"></i>&nbsp;基本情况
+				</span>
+            <div class="itswTitleLine"></div>
+        </div>
+        <table style="width: 95%;margin-left: 20px; margin-top: 10px" id="formTable">
+            <tbody><tr>
+                <td class="td-title td-title-align ">申请单号</td>
+                <td class="td-content"><input type="text" class=" form-control input-readonly" name="appSeqNo" id="appSeqNo" readonly="readonly"></td>
+                <td class="td-title td-title-align">企业备案编号</td>
+                <td class="td-content"><input type="text" class="form-control input-readonly" name="regCo" id="regCo" readonly="readonly"></td>
+                <td class="td-title td-title-align">备案状态</td>
+                <td class="td-content">
+                    <div class="input-group ">
+                        <input type="hidden" class=" form-control input-readonly" name="status" id="status" readonly="readonly">
+                        <input type="text" class=" form-control input-readonly" name="statusName" id="statusName" readonly="readonly">
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td-title td-title-align">组织机构代码</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control input-readonly" maxlength="18" name="validityBeginDate" id="validityBeginDate" readonly="readonly"></td>
+                <td class="td-title td-title-align" id="validityEndDatetdName">统一社会信用代码</td>
+                <td class="td-content" id="validityEndDatetdValue">
+                    <input type="text" class=" form-control input-readonly" maxlength="18" name="validityEndDate" id="validityEndDate" readonly="readonly">
+                </td>
+                <td class="td-title td-title-align">申请状态</td>
+                <td class="td-content">
+                    <input type="hidden" class=" form-control " name="channel" id="channel">
+                    <input type="text" class=" form-control input-readonly" name="channelName" id="channelName" readonly="readonly">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="td-title td-title-align">申请海关</td>
+                <td class="td-content">
+                    <div class="input-group ">
+                        <input type="hidden" class="form-control" id="customCode" name="customCode" value=""> <input type="text" class="form-control non-empty" id="customCodeName" name="customCodeName" placeholder="请选择" autocomplete="off" aria-required="true">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-white dropdown-toggle btn_select" data-toggle="" id="custom_tradeType" style="border: none">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu" style="padding-top: 0px; max-height: 375px; max-width: 350px; overflow: auto; width: auto; transition: all 0.3s ease 0s;">
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+                <td class="td-title td-title-align">备案类型</td>
+                <td class="td-content">
+                    <div class="input-group ">
+                        <input type="hidden" class="form-control" id="tradeType" name="tradeType" value=""> <input type="text" class="form-control non-empty" id="tradeTypeName" name="tradeTypeName" placeholder="请选择" autocomplete="off">
+                        <div class="input-group-btn">
+                            <button type="button" class=" btn-white dropdown-toggle btn_select" data-toggle="" id="btn_tradeType" style="border: none">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu" style="padding-top: 0px; max-height: 375px; max-width: 350px; overflow: auto; width: auto; transition: all 0.3s ease 0s;">
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+                <td class="td-title td-title-align">申请日期</td>
+                <td class="td-content">
+                    <input type="text" class=" form-control input-readonly" maxlength="18" name="applyDate" id="applyDate" readonly="readonly"></td>
+            </tr>
+            </tbody></table>
+
+        <div class="row " style="margin-top: 2px;padding-left: 18px;"></div>
+
+        <div class="row itswRow">
+				<span class="itswTitle">
+					<i class="fa fa-edit"></i>&nbsp;基本信息
+				</span>
+            <div class="itswTitleLine"></div>
+        </div>
+        <table style="width: 95%;margin-left: 20px; margin-top: 10px" id="baseInfoTable">
+            <tbody><tr><td class="td-title td-title-align">统一社会信用代码</td><td class="td-content"><input type="text" class="form-control non-empty input-readonly" maxlength="18" name="socialCreditCode" id="socialCreditCode" readonly="readonly" aria-required="true"></td><td class="td-title-align">企业名称</td><td colspan="3"><input type="text" class="form-control non-empty" name="nameSaic" id="nameSaic" aria-required="true"></td></tr><tr><td class="td-title td-title-align">企业地址</td><td colspan="5"><input type="text" class="form-control non-empty" name="addressSaic" id="addressSaic" aria-required="true"></td></tr><tr><td class="td-title td-title-align">企业邮编</td><td class="td-content"><input type="text" class="form-control non-empty" maxlength="6" name="postCode" id="postCode" aria-required="true"></td><td class="td-title td-title-align">企业传真</td><td class="td-content"><input type="text" class="form-control non-empty" name="faxCode" id="faxCode" aria-required="true"></td><td class="td-title td-title-align">企业邮箱</td><td class="td-content"><input type="text" class="form-control" name="email" id="email"></td></tr><tr><td class="td-title td-title-align">法人代表</td><td class="td-content"><input type="text" class="form-control non-empty" name="lawMan" id="lawMan" aria-required="true"></td><td class="td-title td-title-align">法人固定电话</td><td class="td-content"><input type="text" class="form-control" placeholder="电话与手机有一项必填(XXX-XXXXXXX)" name="lawManFixed" id="lawManFixed"></td><td class="td-title td-title-align">法人手机号码</td><td class="td-content"><input type="text" class="form-control" placeholder="与手机有电话一项必填" maxlength="11" name="lawManMobile" id="lawManMobile"></td></tr><tr><td class="td-title td-title-align">联系人</td><td class="td-content"><input type="text" class="form-control non-empty" name="contactName" id="contactName" maxlength="32" aria-required="true"></td><td class="td-title td-title-align">联系人固定电话</td><td class="td-content"><input type="text" class="form-control" placeholder="电话与手机有一项必填(XXX-XXXXXXX)" name="contactFixed" id="contactFixed"></td><td class="td-title td-title-align">联系人手机号码</td><td class="td-content"><input type="text" class="form-control" placeholder="与电话与手机有一项必填" maxlength="11" name="contactMobile" id="contactMobile"></td></tr><tr><td class="td-title td-title-align">产品种类</td><td class="td-content"><input type="hidden" class="form-control" id="productKind" name="productKind" aria-required="true"> <input type="hidden" class="form-control non-empty" id="productKindName" name="productKindName" placeholder="请选择" aria-required="true"> <input type="text" class=" non-empty" name="productKindText" style="width: 92%;" id="productKindText" onclick="alertLayerProduct()"><div class="itswInput f1" style="width: 8%;float:right;"><button type="button" class="btn btn-sm btn-primary submenu-btn btn_pop_up upperCase" id="showNotePro" onclick="openNoteSLayerPro()" style="border-radius: 8px !important;"><i class="fa fa-ellipsis-h"></i></button></div></td><td class="td-title td-title-align">具体品种</td><td colspan="3"><input type="text" class="form-control non-empty" name="specificVarie" id="specificVarie" aria-required="true"></td></tr><tr><td class="td-title td-title-align">来源国家/地区</td><td colspan="5"><input type="hidden" id="sourcePlace" name="sourcePlace"><input type="hidden" class="form-control non-empty" name="sourcePlaceName" id="sourcePlaceName"><input type="text" class="form-control non-empty" name="sourcePlaceText" id="sourcePlaceText" onclick="alertLayer()" aria-required="true"></td></tr><tr><td class="td-title td-title-align">备注</td><td colspan="5"><input type="text" class="form-control" name="note" id="note"></td></tr></tbody></table>
+    </form>
+
+</div>
+<!--基本信息end-->
+
+<!--表体信息start-->
+<div id="uploadDiv">
+    <div class="row itswRow">
+		<span class="itswTitle">
+			<i class="fa fa-edit"></i>&nbsp;上传附件
+		</span>
+        <div class="itswTitleLine"></div>
+    </div>
+    <div class="row itswRow">
+        <div class="col-sm-12">
+            <div class="col-sm-12 table-responsive">
+                <div class="example-wrap">
+                    <div class="example">
+                        <div class="btn-group hidden-xs" id="billOfLadingInformationToolbar" role="group" style="margin-bottom: 4px;
+                                    margin-top: 0.2%;margin-left: 1.3%;">
+                            <button type="button" class="btn btn-sm btn-primary" id="fileUpload" style="margin-right: 95%;border: none">
+                                <i class="fafa-upload"></i>&nbsp;文件上传
+                            </button>
+                        </div>
+                        <div class="row itswRow" id="decDocTableDiv">
+                            <div class="col-sm-12">
+                                <div class="col-sm-12">
+                                    <table id="decDocTable" data-checkbox-header="false" data-mobile-responsive="true" class="itswTable table-fixed">
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--上传附件-->
+<!--文件上传div  -->
+<div id="annexUpload" style="display: none;">
+    <form id="dec_doc_form" onkeydown="if(event.keyCode==13){return false;};" autocomplete="off">
+        <div class="percent-100">
+            <table class="pop-table" style="width: 94%; margin-left: 2.8%">
+                <tbody><tr>
+                    <td colspan="6" style="padding: 2px;">
+                        <span style="color: red">(提示：可上传后缀名为.jpg|*.jpeg|*.gif|*.png|*.bmp|*.pdf|*.doc|*.docx等文件，单个文件大小不能超过4M)</span>
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
+    </form>
+    <table id="decDocLayerTable" data-checkbox-header="false" data-mobile-responsive="true" class="itswTable table-fixed">
+    </table>
+</div>
+<!-- 来源国家 -->
+<div id="layer_content" style="display:none;">
+    <br>
+    <form onkeydown="if(event.keyCode==13){return false;};" autocomplete="off">
+        <div class="col-sm-5 text" style="margin-top: 1%;">
+            <label style="font-size: 12px;font-weight: 500;">国家\地区:</label><br>
+            <div class="input-group ">
+                <input type="hidden" class="form-control" id="multi_select_hid" name="multi_select_hid">
+                <input type="text" class="form-control" id="multi_select" name="multi_select" placeholder="请选择" style="width: 100%;z-index:0;height: 25px;">
+                <!-- <div class="input-group-btn">
+                    <button type="button" class="btn btn-white dropdown-toggle btn_select"
+                            data-toggle="dropdown" style="z-index:1; border: none">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="col-sm-offset-7" style="margin-top: 1%;">
+            <label style="font-size: 12px;font-weight: 500;">已选择:</label>
+            <div class="multiselect">
+                <ul class="checked" id="multi_select_demo"></ul>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- 产品种类 -->
+<div id="layer_content_pro" style="display:none;">
+    <form onkeydown="if(event.keyCode==13){return false;};" autocomplete="off">
+        <div class="col-sm-5 text" style="margin-top: 1%;">
+            <label style="font-size: 12px;font-weight: 500;">产品种类:</label>
+            <div class="input-group ">
+                <input type="hidden" class="form-control" id="multi_select_proName" name="multi_select_proName">
+                <input type="text" class="form-control" id="multi_select_pro" name="multi_select_pro" placeholder="请选择" style="width: 110%;z-index:0;height: 25px;">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-white dropdown-toggle btn_select" data-toggle="dropdown" style="z-index:1;border: none">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-offset-7" style="margin-top: 1%;">
+            <label style="font-size: 12px;font-weight: 500;">已选择:</label>
+            <div class="multiselect">
+                <ul class="checked" id="multi_select_demo_pro">
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+<!--产品种类弹窗-->
+<div id="proLayer" style="display: none;">
+    <div>
+        <textarea rows="9" cols="2" class="form-control" name="proSLa" id="proSLa" maxlength="4000" shiftenter="no" enter="no" style="height:187px; resize: none;"></textarea>
+    </div>
+</div>
+
+<div class="row " style="height: 20px;"></div>
+<!-- 导入该页面操作的js文件 -->
+<!--公共js-->
+
+<!--<script type="text/javascript" src="common/js/autocompleter/jquery.autocompleter.js"></script>-->
+<!--<script type="text/javascript" src="common/js/autocompleter/autocomp.js"></script>-->
+<!--<script type="text/javascript" src="common/js/ujcf_common.js"></script>-->
+<!--<script type="text/javascript" src="common/js/page_constant.js"></script>-->
+<!--<script type="text/javascript" src="common/js/page_common.js"></script>-->
+
+<!--<script type="text/javascript" src="/js/swutils/swUtil.js"></script>-->
+<!--<script type="text/javascript" src="common/js/ujcf_enum.js"></script>-->
+<!--&lt;!&ndash;页面js&ndash;&gt;-->
+<!--<script type="text/javascript" src="common/js/fileUploadNew.js"></script>-->
+<!--<script type="text/javascript" src="anplt/registerApply/js/registerApply.js"></script>-->
+<!--<script type="text/javascript" src="anplt/registerApply/js/validateRegisterForm.js"></script>-->
+
+<div class="layui-layer-move"></div><script type="text/javascript" src="https://app.singlewindow.cn/sat/swVersion.js?d=1608714724666"></script></body></html>

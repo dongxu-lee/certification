@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.customs.online.dao.CspooEntRecordAttachMapper">
+  <resultMap id="BaseResultMap" type="cn.gov.customs.online.pojo.CspooEntRecordAttach">
+    <id column="ATTACH_NO" jdbcType="VARCHAR" property="attachNo" />
+    <id column="APL_NO" jdbcType="VARCHAR" property="aplNo" />
+    <result column="ATTACH_TYPE" jdbcType="VARCHAR" property="attachType" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="INDB_TIME" jdbcType="DATE" property="indbTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from CSPOO_ENT_RECORD_ATTACH
+    where ATTACH_NO = #{attachNo,jdbcType=VARCHAR}
+      and APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.gov.customs.online.pojo.CspooEntRecordAttach">
+    insert into CSPOO_ENT_RECORD_ATTACH (ATTACH_NO, APL_NO, ATTACH_TYPE, 
+      FILE_NAME, INDB_TIME, UPDATE_TIME
+      )
+    values (#{attachNo,jdbcType=VARCHAR}, #{aplNo,jdbcType=VARCHAR}, #{attachType,jdbcType=VARCHAR}, 
+      #{fileName,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.gov.customs.online.pojo.CspooEntRecordAttach">
+    update CSPOO_ENT_RECORD_ATTACH
+    set ATTACH_TYPE = #{attachType,jdbcType=VARCHAR},
+      FILE_NAME = #{fileName,jdbcType=VARCHAR},
+      INDB_TIME = #{indbTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where ATTACH_NO = #{attachNo,jdbcType=VARCHAR}
+      and APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select ATTACH_NO, APL_NO, ATTACH_TYPE, FILE_NAME, INDB_TIME, UPDATE_TIME
+    from CSPOO_ENT_RECORD_ATTACH
+    where ATTACH_NO = #{attachNo,jdbcType=VARCHAR}
+      and APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select ATTACH_NO, APL_NO, ATTACH_TYPE, FILE_NAME, INDB_TIME, UPDATE_TIME
+    from CSPOO_ENT_RECORD_ATTACH
+  </select>
+  <!-- insert into t(a, b) values('',''),('','');oracle不支持这种写法 -->
+  <insert id="insertBatchWithPrimaryKey">
+    insert all
+    <foreach collection ="cspooEntRecordAttach" item="item" index= "index" separator =" ">
+      into CSPOO_ENT_RECORD_ATTACH (ATTACH_NO, APL_NO, ATTACH_TYPE,
+      FILE_NAME, INDB_TIME, UPDATE_TIME
+      )
+      values
+        (
+        #{item.attachNo,jdbcType=VARCHAR},
+        #{aplNo,jdbcType=VARCHAR},
+        #{item.attachType,jdbcType=VARCHAR},
+        #{item.fileName,jdbcType=VARCHAR},
+        #{item.indbTime,jdbcType=DATE},
+        #{item.updateTime,jdbcType=DATE}
+        )
+    </foreach>
+    select 1 from dual
+  </insert>
+  <update id="updateBatch" parameterType="java.util.List">
+    <foreach collection ="cspooEntRecordAttach" item="item" index= "index" separator =";">
+      into CSPOO_ENT_RECORD_ATTACH (ATTACH_NO, APL_NO, ATTACH_TYPE,
+      FILE_NAME, INDB_TIME, UPDATE_TIME
+      )
+      values
+      (
+      #{item.attachNo,jdbcType=VARCHAR},
+      #{aplNo,jdbcType=VARCHAR},
+      #{item.attachType,jdbcType=VARCHAR},
+      #{item.fileName,jdbcType=VARCHAR},
+      #{item.indbTime,jdbcType=DATE},
+      #{item.updateTime,jdbcType=DATE}
+      )
+    </foreach>
+  </update>
+  <delete id="deleteByAplNo" parameterType="java.lang.String">
+    delete from CSPOO_ENT_RECORD_ATTACH
+    where APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert all
+    <foreach collection ="cspooEntRecordAttach" item="item" index= "index" separator =" ">
+      into CSPOO_ENT_RECORD_ATTACH (ATTACH_NO, APL_NO, ATTACH_TYPE,
+      FILE_NAME, INDB_TIME, UPDATE_TIME
+      )
+      values
+      (
+      #{item.attachNo,jdbcType=VARCHAR},
+      #{item.aplNo,jdbcType=VARCHAR},
+      #{item.attachType,jdbcType=VARCHAR},
+      #{item.fileName,jdbcType=VARCHAR},
+      #{item.indbTime,jdbcType=DATE},
+      #{item.updateTime,jdbcType=DATE}
+      )
+    </foreach>
+    select 1 from dual
+  </insert>
+</mapper>

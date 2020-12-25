@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.customs.online.dao3.CspooAgencyEntInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.gov.customs.online.pojo3.CspooAgencyEntInfo">
+    <id column="NO" jdbcType="VARCHAR" property="no" />
+    <result column="AGENENT_CIQ_REG_NO" jdbcType="VARCHAR" property="agenentCiqRegNo" />
+    <result column="AGENENT_NAME_C" jdbcType="VARCHAR" property="agenentNameC" />
+    <result column="AGENENT_NAME_E" jdbcType="VARCHAR" property="agenentNameE" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="UNI_SOCIAL_CREDIT_CODE" jdbcType="VARCHAR" property="uniSocialCreditCode" />
+    <result column="ENT_MGR_NO" jdbcType="VARCHAR" property="entMgrNo" />
+    <result column="INDB_TIME" jdbcType="DATE" property="indbTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    NO, AGENENT_CIQ_REG_NO, AGENENT_NAME_C, AGENENT_NAME_E, STATE, UNI_SOCIAL_CREDIT_CODE, 
+    ENT_MGR_NO, INDB_TIME, UPDATE_TIME
+  </sql>
+  <select id="selectByExample" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from CSPOO_AGENCY_ENT_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from CSPOO_AGENCY_ENT_INFO
+    where NO = #{no,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CSPOO_AGENCY_ENT_INFO
+    where NO = #{no,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfoExample">
+    delete from CSPOO_AGENCY_ENT_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfo">
+    insert into CSPOO_AGENCY_ENT_INFO (NO, AGENENT_CIQ_REG_NO, AGENENT_NAME_C, 
+      AGENENT_NAME_E, STATE, UNI_SOCIAL_CREDIT_CODE, 
+      ENT_MGR_NO, INDB_TIME, UPDATE_TIME
+      )
+    values (#{no,jdbcType=VARCHAR}, #{agenentCiqRegNo,jdbcType=VARCHAR}, #{agenentNameC,jdbcType=VARCHAR}, 
+      #{agenentNameE,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{uniSocialCreditCode,jdbcType=VARCHAR}, 
+      #{entMgrNo,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfo">
+    insert into CSPOO_AGENCY_ENT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="no != null">
+        NO,
+      </if>
+      <if test="agenentCiqRegNo != null">
+        AGENENT_CIQ_REG_NO,
+      </if>
+      <if test="agenentNameC != null">
+        AGENENT_NAME_C,
+      </if>
+      <if test="agenentNameE != null">
+        AGENENT_NAME_E,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+      <if test="uniSocialCreditCode != null">
+        UNI_SOCIAL_CREDIT_CODE,
+      </if>
+      <if test="entMgrNo != null">
+        ENT_MGR_NO,
+      </if>
+      <if test="indbTime != null">
+        INDB_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="no != null">
+        #{no,jdbcType=VARCHAR},
+      </if>
+      <if test="agenentCiqRegNo != null">
+        #{agenentCiqRegNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agenentNameC != null">
+        #{agenentNameC,jdbcType=VARCHAR},
+      </if>
+      <if test="agenentNameE != null">
+        #{agenentNameE,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="uniSocialCreditCode != null">
+        #{uniSocialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="entMgrNo != null">
+        #{entMgrNo,jdbcType=VARCHAR},
+      </if>
+      <if test="indbTime != null">
+        #{indbTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfoExample" resultType="java.lang.Long">
+    select count(*) from CSPOO_AGENCY_ENT_INFO
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update CSPOO_AGENCY_ENT_INFO
+    <set>
+      <if test="record.no != null">
+        NO = #{record.no,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agenentCiqRegNo != null">
+        AGENENT_CIQ_REG_NO = #{record.agenentCiqRegNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agenentNameC != null">
+        AGENENT_NAME_C = #{record.agenentNameC,jdbcType=VARCHAR},
+      </if>
+      <if test="record.agenentNameE != null">
+        AGENENT_NAME_E = #{record.agenentNameE,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.uniSocialCreditCode != null">
+        UNI_SOCIAL_CREDIT_CODE = #{record.uniSocialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entMgrNo != null">
+        ENT_MGR_NO = #{record.entMgrNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.indbTime != null">
+        INDB_TIME = #{record.indbTime,jdbcType=DATE},
+      </if>
+      <if test="record.updateTime != null">
+        UPDATE_TIME = #{record.updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update CSPOO_AGENCY_ENT_INFO
+    set NO = #{record.no,jdbcType=VARCHAR},
+      AGENENT_CIQ_REG_NO = #{record.agenentCiqRegNo,jdbcType=VARCHAR},
+      AGENENT_NAME_C = #{record.agenentNameC,jdbcType=VARCHAR},
+      AGENENT_NAME_E = #{record.agenentNameE,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=VARCHAR},
+      UNI_SOCIAL_CREDIT_CODE = #{record.uniSocialCreditCode,jdbcType=VARCHAR},
+      ENT_MGR_NO = #{record.entMgrNo,jdbcType=VARCHAR},
+      INDB_TIME = #{record.indbTime,jdbcType=DATE},
+      UPDATE_TIME = #{record.updateTime,jdbcType=DATE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfo">
+    update CSPOO_AGENCY_ENT_INFO
+    <set>
+      <if test="agenentCiqRegNo != null">
+        AGENENT_CIQ_REG_NO = #{agenentCiqRegNo,jdbcType=VARCHAR},
+      </if>
+      <if test="agenentNameC != null">
+        AGENENT_NAME_C = #{agenentNameC,jdbcType=VARCHAR},
+      </if>
+      <if test="agenentNameE != null">
+        AGENENT_NAME_E = #{agenentNameE,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="uniSocialCreditCode != null">
+        UNI_SOCIAL_CREDIT_CODE = #{uniSocialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="entMgrNo != null">
+        ENT_MGR_NO = #{entMgrNo,jdbcType=VARCHAR},
+      </if>
+      <if test="indbTime != null">
+        INDB_TIME = #{indbTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    where NO = #{no,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.gov.customs.online.pojo3.CspooAgencyEntInfo">
+    update CSPOO_AGENCY_ENT_INFO
+    set AGENENT_CIQ_REG_NO = #{agenentCiqRegNo,jdbcType=VARCHAR},
+      AGENENT_NAME_C = #{agenentNameC,jdbcType=VARCHAR},
+      AGENENT_NAME_E = #{agenentNameE,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      UNI_SOCIAL_CREDIT_CODE = #{uniSocialCreditCode,jdbcType=VARCHAR},
+      ENT_MGR_NO = #{entMgrNo,jdbcType=VARCHAR},
+      INDB_TIME = #{indbTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where NO = #{no,jdbcType=VARCHAR}
+  </update>
+</mapper>

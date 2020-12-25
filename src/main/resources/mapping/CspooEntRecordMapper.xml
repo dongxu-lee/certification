@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.customs.online.dao.CspooEntRecordMapper">
+  <resultMap id="BaseResultMap" type="cn.gov.customs.online.pojo.CspooEntRecord">
+    <id column="APL_NO" jdbcType="VARCHAR" property="aplNo" />
+    <result column="ENT_MGR_NO" jdbcType="VARCHAR" property="entMgrNo" />
+    <result column="REG_STATE" jdbcType="VARCHAR" property="regState" />
+    <result column="CIQ_REG_NO" jdbcType="VARCHAR" property="ciqRegNo" />
+    <result column="UNI_SOCIAL_CREDIT_CODE" jdbcType="VARCHAR" property="uniSocialCreditCode" />
+    <result column="APL_TYPE" jdbcType="VARCHAR" property="aplType" />
+    <result column="NAME_C" jdbcType="VARCHAR" property="nameC" />
+    <result column="NAME_E" jdbcType="VARCHAR" property="nameE" />
+    <result column="RES_C" jdbcType="VARCHAR" property="resC" />
+    <result column="RES_E" jdbcType="VARCHAR" property="resE" />
+    <result column="NATURE" jdbcType="VARCHAR" property="nature" />
+    <result column="PRO_ENT" jdbcType="VARCHAR" property="proEnt" />
+    <result column="BUSI_REG_PLA" jdbcType="VARCHAR" property="busiRegPla" />
+    <result column="SEARCH_ORG_CODE" jdbcType="VARCHAR" property="searchOrgCode" />
+    <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+    <result column="LEG_REP" jdbcType="VARCHAR" property="legRep" />
+    <result column="LEG_REP_IDPASS_NO" jdbcType="VARCHAR" property="legRepIdpassNo" />
+    <result column="LEG_REP_TEL" jdbcType="VARCHAR" property="legRepTel" />
+    <result column="CONTACT" jdbcType="VARCHAR" property="contact" />
+    <result column="CONTACT_TEL" jdbcType="VARCHAR" property="contactTel" />
+    <result column="MANAGE_TYPE" jdbcType="VARCHAR" property="manageType" />
+    <result column="APL_MODE" jdbcType="VARCHAR" property="aplMode" />
+    <result column="REG_APL_DATE" jdbcType="DATE" property="regAplDate" />
+    <result column="VISA_AGENCY" jdbcType="VARCHAR" property="visaAgency" />
+    <result column="OBTAIN_AGENCY" jdbcType="VARCHAR" property="obtainAgency" />
+    <result column="NOTE" jdbcType="VARCHAR" property="note" />
+    <result column="INDB_TIME" jdbcType="DATE" property="indbTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CSPOO_ENT_RECORD
+    where APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">
+    insert into CSPOO_ENT_RECORD (APL_NO, ENT_MGR_NO, REG_STATE, 
+      CIQ_REG_NO, UNI_SOCIAL_CREDIT_CODE, APL_TYPE, 
+      NAME_C, NAME_E, RES_C, 
+      RES_E, NATURE, PRO_ENT, 
+      BUSI_REG_PLA, SEARCH_ORG_CODE, EMAIL, 
+      LEG_REP, LEG_REP_IDPASS_NO, LEG_REP_TEL, 
+      CONTACT, CONTACT_TEL, MANAGE_TYPE, 
+      APL_MODE, REG_APL_DATE, VISA_AGENCY, 
+      OBTAIN_AGENCY, NOTE, INDB_TIME, 
+      UPDATE_TIME)
+    values (#{aplNo,jdbcType=VARCHAR}, #{entMgrNo,jdbcType=VARCHAR}, #{regState,jdbcType=VARCHAR}, 
+      #{ciqRegNo,jdbcType=VARCHAR}, #{uniSocialCreditCode,jdbcType=VARCHAR}, #{aplType,jdbcType=VARCHAR}, 
+      #{nameC,jdbcType=VARCHAR}, #{nameE,jdbcType=VARCHAR}, #{resC,jdbcType=VARCHAR}, 
+      #{resE,jdbcType=VARCHAR}, #{nature,jdbcType=VARCHAR}, #{proEnt,jdbcType=VARCHAR}, 
+      #{busiRegPla,jdbcType=VARCHAR}, #{searchOrgCode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{legRep,jdbcType=VARCHAR}, #{legRepIdpassNo,jdbcType=VARCHAR}, #{legRepTel,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{contactTel,jdbcType=VARCHAR}, #{manageType,jdbcType=VARCHAR}, 
+      #{aplMode,jdbcType=VARCHAR}, #{regAplDate,jdbcType=DATE}, #{visaAgency,jdbcType=VARCHAR}, 
+      #{obtainAgency,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE}, 
+      #{updateTime,jdbcType=DATE})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">
+    update CSPOO_ENT_RECORD
+    set ENT_MGR_NO = #{entMgrNo,jdbcType=VARCHAR},
+      REG_STATE = #{regState,jdbcType=VARCHAR},
+      CIQ_REG_NO = #{ciqRegNo,jdbcType=VARCHAR},
+      UNI_SOCIAL_CREDIT_CODE = #{uniSocialCreditCode,jdbcType=VARCHAR},
+      APL_TYPE = #{aplType,jdbcType=VARCHAR},
+      NAME_C = #{nameC,jdbcType=VARCHAR},
+      NAME_E = #{nameE,jdbcType=VARCHAR},
+      RES_C = #{resC,jdbcType=VARCHAR},
+      RES_E = #{resE,jdbcType=VARCHAR},
+      NATURE = #{nature,jdbcType=VARCHAR},
+      PRO_ENT = #{proEnt,jdbcType=VARCHAR},
+      BUSI_REG_PLA = #{busiRegPla,jdbcType=VARCHAR},
+      SEARCH_ORG_CODE = #{searchOrgCode,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      LEG_REP = #{legRep,jdbcType=VARCHAR},
+      LEG_REP_IDPASS_NO = #{legRepIdpassNo,jdbcType=VARCHAR},
+      LEG_REP_TEL = #{legRepTel,jdbcType=VARCHAR},
+      CONTACT = #{contact,jdbcType=VARCHAR},
+      CONTACT_TEL = #{contactTel,jdbcType=VARCHAR},
+      MANAGE_TYPE = #{manageType,jdbcType=VARCHAR},
+      APL_MODE = #{aplMode,jdbcType=VARCHAR},
+      REG_APL_DATE = #{regAplDate,jdbcType=DATE},
+      VISA_AGENCY = #{visaAgency,jdbcType=VARCHAR},
+      OBTAIN_AGENCY = #{obtainAgency,jdbcType=VARCHAR},
+      NOTE = #{note,jdbcType=VARCHAR},
+      INDB_TIME = #{indbTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select APL_NO, ENT_MGR_NO, REG_STATE, CIQ_REG_NO, UNI_SOCIAL_CREDIT_CODE, APL_TYPE, 
+    NAME_C, NAME_E, RES_C, RES_E, NATURE, PRO_ENT, BUSI_REG_PLA, SEARCH_ORG_CODE, EMAIL, 
+    LEG_REP, LEG_REP_IDPASS_NO, LEG_REP_TEL, CONTACT, CONTACT_TEL, MANAGE_TYPE, APL_MODE, 
+    REG_APL_DATE, VISA_AGENCY, OBTAIN_AGENCY, NOTE, INDB_TIME, UPDATE_TIME
+    from CSPOO_ENT_RECORD
+    where APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select APL_NO, ENT_MGR_NO, REG_STATE, CIQ_REG_NO, UNI_SOCIAL_CREDIT_CODE, APL_TYPE, 
+    NAME_C, NAME_E, RES_C, RES_E, NATURE, PRO_ENT, BUSI_REG_PLA, SEARCH_ORG_CODE, EMAIL, 
+    LEG_REP, LEG_REP_IDPASS_NO, LEG_REP_TEL, CONTACT, CONTACT_TEL, MANAGE_TYPE, APL_MODE, 
+    REG_APL_DATE, VISA_AGENCY, OBTAIN_AGENCY, NOTE, INDB_TIME, UPDATE_TIME
+    from CSPOO_ENT_RECORD
+  </select>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">
+    update CSPOO_ENT_RECORD
+    <set>
+      <if test="entMgrNo != null">
+        ENT_MGR_NO = #{entMgrNo,jdbcType=VARCHAR},
+      </if>
+      <if test="regState != null">
+        REG_STATE = #{regState,jdbcType=VARCHAR},
+      </if>
+      <if test="ciqRegNo != null">
+        CIQ_REG_NO = #{ciqRegNo,jdbcType=VARCHAR},
+      </if>
+      <if test="uniSocialCreditCode != null">
+        UNI_SOCIAL_CREDIT_CODE = #{uniSocialCreditCode,jdbcType=VARCHAR},
+      </if>
+      <if test="aplType != null">
+        APL_TYPE = #{aplType,jdbcType=VARCHAR},
+      </if>
+      <if test="nameC != null">
+        NAME_C = #{nameC,jdbcType=VARCHAR},
+      </if>
+      <if test="nameE != null">
+        NAME_E = #{nameE,jdbcType=VARCHAR},
+      </if>
+      <if test="resC != null">
+        RES_C = #{resC,jdbcType=VARCHAR},
+      </if>
+      <if test="resE != null">
+        RES_E = #{resE,jdbcType=VARCHAR},
+      </if>
+      <if test="nature != null">
+        NATURE = #{nature,jdbcType=VARCHAR},
+      </if>
+      <if test="proEnt != null">
+        PRO_ENT = #{proEnt,jdbcType=VARCHAR},
+      </if>
+      <if test="busiRegPla != null">
+        BUSI_REG_PLA = #{busiRegPla,jdbcType=VARCHAR},
+      </if>
+      <if test="searchOrgCode != null">
+        SEARCH_ORG_CODE = #{searchOrgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="legRep != null">
+        LEG_REP = #{legRep,jdbcType=VARCHAR},
+      </if>
+      <if test="legRepIdpassNo != null">
+        LEG_REP_IDPASS_NO = #{legRepIdpassNo,jdbcType=VARCHAR},
+      </if>
+      <if test="legRepTel != null">
+        LEG_REP_TEL = #{legRepTel,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        CONTACT = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="contactTel != null">
+        CONTACT_TEL = #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="manageType != null">
+        MANAGE_TYPE = #{manageType,jdbcType=VARCHAR},
+      </if>
+      <if test="aplMode != null">
+        APL_MODE = #{aplMode,jdbcType=VARCHAR},
+      </if>
+      <if test="regAplDate != null">
+        REG_APL_DATE = #{regAplDate,jdbcType=DATE},
+      </if>
+      <if test="visaAgency != null">
+        VISA_AGENCY = #{visaAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="obtainAgency != null">
+        OBTAIN_AGENCY = #{obtainAgency,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        NOTE = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="indbTime != null">
+        INDB_TIME = #{indbTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+    </set>
+    where APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </update>
+  <insert id="insertUseSequence" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">
+    <selectKey keyProperty="aplNo" resultType="java.lang.String" order="BEFORE">
+      select CSPOO_ENT_RECORD_SEQUENCE.NEXTVAL from dual
+    </selectKey>
+    insert into CSPOO_ENT_RECORD (APL_NO, ENT_MGR_NO, REG_STATE,
+      CIQ_REG_NO, UNI_SOCIAL_CREDIT_CODE, APL_TYPE,
+      NAME_C, NAME_E, RES_C,
+      RES_E, NATURE, PRO_ENT,
+      BUSI_REG_PLA, SEARCH_ORG_CODE, EMAIL,
+      LEG_REP, LEG_REP_IDPASS_NO, LEG_REP_TEL,
+      CONTACT, CONTACT_TEL, MANAGE_TYPE,
+      APL_MODE, REG_APL_DATE, VISA_AGENCY,
+      OBTAIN_AGENCY, NOTE, INDB_TIME,
+      UPDATE_TIME)
+    values (#{aplNo,jdbcType=VARCHAR}, #{entMgrNo,jdbcType=VARCHAR}, #{regState,jdbcType=VARCHAR},
+      #{ciqRegNo,jdbcType=VARCHAR}, #{uniSocialCreditCode,jdbcType=VARCHAR}, #{aplType,jdbcType=VARCHAR},
+      #{nameC,jdbcType=VARCHAR}, #{nameE,jdbcType=VARCHAR}, #{resC,jdbcType=VARCHAR},
+      #{resE,jdbcType=VARCHAR}, #{nature,jdbcType=VARCHAR}, #{proEnt,jdbcType=VARCHAR},
+      #{busiRegPla,jdbcType=VARCHAR}, #{searchOrgCode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+      #{legRep,jdbcType=VARCHAR}, #{legRepIdpassNo,jdbcType=VARCHAR}, #{legRepTel,jdbcType=VARCHAR},
+      #{contact,jdbcType=VARCHAR}, #{contactTel,jdbcType=VARCHAR}, #{manageType,jdbcType=VARCHAR},
+      #{aplMode,jdbcType=VARCHAR}, #{regAplDate,jdbcType=DATE}, #{visaAgency,jdbcType=VARCHAR},
+      #{obtainAgency,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE},
+      #{updateTime,jdbcType=DATE})
+  </insert>
+</mapper>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.customs.online.dao.CspooAgencyEntInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.gov.customs.online.pojo.CspooAgencyEntInfo">
+    <id column="NO" jdbcType="VARCHAR" property="no" />
+    <result column="AGENENT_CIQ_REG_NO" jdbcType="VARCHAR" property="agenentCiqRegNo" />
+    <result column="AGENENT_NAME_C" jdbcType="VARCHAR" property="agenentNameC" />
+    <result column="AGENENT_NAME_E" jdbcType="VARCHAR" property="agenentNameE" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="UNI_SOCIAL_CREDIT_CODE" jdbcType="VARCHAR" property="uniSocialCreditCode" />
+    <result column="ENT_MGR_NO" jdbcType="VARCHAR" property="entMgrNo" />
+    <result column="INDB_TIME" jdbcType="DATE" property="indbTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from CSPOO_AGENCY_ENT_INFO
+    where NO = #{no,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.gov.customs.online.pojo.CspooAgencyEntInfo">
+    insert into CSPOO_AGENCY_ENT_INFO (NO, AGENENT_CIQ_REG_NO, AGENENT_NAME_C, 
+      AGENENT_NAME_E, STATE, UNI_SOCIAL_CREDIT_CODE, 
+      ENT_MGR_NO, INDB_TIME, UPDATE_TIME
+      )
+    values (#{no,jdbcType=VARCHAR}, #{agenentCiqRegNo,jdbcType=VARCHAR}, #{agenentNameC,jdbcType=VARCHAR}, 
+      #{agenentNameE,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{uniSocialCreditCode,jdbcType=VARCHAR}, 
+      #{entMgrNo,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.gov.customs.online.pojo.CspooAgencyEntInfo">
+    update CSPOO_AGENCY_ENT_INFO
+    set AGENENT_CIQ_REG_NO = #{agenentCiqRegNo,jdbcType=VARCHAR},
+      AGENENT_NAME_C = #{agenentNameC,jdbcType=VARCHAR},
+      AGENENT_NAME_E = #{agenentNameE,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      UNI_SOCIAL_CREDIT_CODE = #{uniSocialCreditCode,jdbcType=VARCHAR},
+      ENT_MGR_NO = #{entMgrNo,jdbcType=VARCHAR},
+      INDB_TIME = #{indbTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE}
+    where NO = #{no,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select NO, AGENENT_CIQ_REG_NO, AGENENT_NAME_C, AGENENT_NAME_E, STATE, UNI_SOCIAL_CREDIT_CODE, 
+    ENT_MGR_NO, INDB_TIME, UPDATE_TIME
+    from CSPOO_AGENCY_ENT_INFO
+    where NO = #{no,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select NO, AGENENT_CIQ_REG_NO, AGENENT_NAME_C, AGENENT_NAME_E, STATE, UNI_SOCIAL_CREDIT_CODE, 
+    ENT_MGR_NO, INDB_TIME, UPDATE_TIME
+    from CSPOO_AGENCY_ENT_INFO
+  </select>
+</mapper>

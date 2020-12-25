@@ -1,0 +1,22 @@
+<html>
+<script src="/js/jquery.min.js"></script>
+<body>
+<h2>企业备案通过</h2>
+<h3>当前企业已经备案审批通过，如需修改企业备案信息，请点击企业备案变更申请</h3>
+<div>
+    <span>倒计时</span>
+    <span id="time">5</span>
+    <span>秒</span>
+</div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var s = setInterval(function () {
+            $("#time").text($("#time").text() * 1 - 1);
+            if($("#time").text() <= 0) {
+                clearInterval(s);
+            }
+        }, 1000);
+    })
+</script>
+</html>
