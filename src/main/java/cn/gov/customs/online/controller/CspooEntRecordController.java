@@ -7,11 +7,10 @@ import cn.gov.customs.online.utils.RespUtil;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -23,6 +22,7 @@ public class CspooEntRecordController {
 
     @Autowired
     private CspooEntRecordService cspooEntRecordService;
+
 
     /**
      * judge whether the company is filed
@@ -67,8 +67,31 @@ public class CspooEntRecordController {
     public RespUtil save(@RequestBody CspooEntRecordSaveDTO saveDTO) {
         String aplNo = cspooEntRecordService.cspooEntRecordSave(saveDTO);
         saveDTO.getCspooEntRecord().setAplNo(aplNo);
-        return RespUtil.success("200", "success", saveDTO);
+        return RespUtil.success("200", "暂存成功", saveDTO);
     }
 
+    /**
+     * delete enterprise filing information
+     * @param aplNo
+     * @return
+     */
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    public RespUtil delete(@RequestParam("aplNo") String aplNo) {
+        //TODO 回公司解开
+        //cspooEntRecordService.cspooEntRecordDelete(aplNo);
+        return RespUtil.success("200", "删除成功", aplNo);
+    }
+
+    /**
+     * declare enterprise filing information
+     * @param saveDTO
+     * @return
+     */
+    @RequestMapping(value = "/declare", method = RequestMethod.POST)
+    public RespUtil declare(@RequestBody CspooEntRecordSaveDTO saveDTO) {
+        //TODO 回公司解开
+        //cspooEntRecordService.cspooEntRecordDeclare(saveDTO);
+        return RespUtil.success("200", "申报成功", saveDTO);
+    }
 
 }

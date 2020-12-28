@@ -1,6 +1,8 @@
 package cn.gov.customs.online.dao;
 
 import cn.gov.customs.online.pojo.CspooEntRecord;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 public interface CspooEntRecordMapper {
@@ -15,6 +17,7 @@ public interface CspooEntRecordMapper {
     int updateByPrimaryKey(CspooEntRecord record);
 
     int updateByPrimaryKeySelective(CspooEntRecord record);
-    //使用序列生成主键并插入数据，返回主键
-    String insertUseSequence(CspooEntRecord record);
+
+    //申报方法修改两个字段
+    int updateForDeclare(CspooEntRecord record);
 }

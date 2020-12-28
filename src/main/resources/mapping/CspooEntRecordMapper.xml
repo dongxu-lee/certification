@@ -190,29 +190,35 @@
     </set>
     where APL_NO = #{aplNo,jdbcType=VARCHAR}
   </update>
-  <insert id="insertUseSequence" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">
-    <selectKey keyProperty="aplNo" resultType="java.lang.String" order="BEFORE">
-      select CSPOO_ENT_RECORD_SEQUENCE.NEXTVAL from dual
-    </selectKey>
-    insert into CSPOO_ENT_RECORD (APL_NO, ENT_MGR_NO, REG_STATE,
-      CIQ_REG_NO, UNI_SOCIAL_CREDIT_CODE, APL_TYPE,
-      NAME_C, NAME_E, RES_C,
-      RES_E, NATURE, PRO_ENT,
-      BUSI_REG_PLA, SEARCH_ORG_CODE, EMAIL,
-      LEG_REP, LEG_REP_IDPASS_NO, LEG_REP_TEL,
-      CONTACT, CONTACT_TEL, MANAGE_TYPE,
-      APL_MODE, REG_APL_DATE, VISA_AGENCY,
-      OBTAIN_AGENCY, NOTE, INDB_TIME,
-      UPDATE_TIME)
-    values (#{aplNo,jdbcType=VARCHAR}, #{entMgrNo,jdbcType=VARCHAR}, #{regState,jdbcType=VARCHAR},
-      #{ciqRegNo,jdbcType=VARCHAR}, #{uniSocialCreditCode,jdbcType=VARCHAR}, #{aplType,jdbcType=VARCHAR},
-      #{nameC,jdbcType=VARCHAR}, #{nameE,jdbcType=VARCHAR}, #{resC,jdbcType=VARCHAR},
-      #{resE,jdbcType=VARCHAR}, #{nature,jdbcType=VARCHAR}, #{proEnt,jdbcType=VARCHAR},
-      #{busiRegPla,jdbcType=VARCHAR}, #{searchOrgCode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
-      #{legRep,jdbcType=VARCHAR}, #{legRepIdpassNo,jdbcType=VARCHAR}, #{legRepTel,jdbcType=VARCHAR},
-      #{contact,jdbcType=VARCHAR}, #{contactTel,jdbcType=VARCHAR}, #{manageType,jdbcType=VARCHAR},
-      #{aplMode,jdbcType=VARCHAR}, #{regAplDate,jdbcType=DATE}, #{visaAgency,jdbcType=VARCHAR},
-      #{obtainAgency,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE},
-      #{updateTime,jdbcType=DATE})
-  </insert>
+<!--  <insert id="insertUseSequence" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">-->
+<!--    <selectKey keyProperty="aplNo" resultType="java.lang.String" order="BEFORE">-->
+<!--      select CSPOO_ENT_RECORD_SEQUENCE.NEXTVAL from dual-->
+<!--    </selectKey>-->
+<!--    insert into CSPOO_ENT_RECORD (APL_NO, ENT_MGR_NO, REG_STATE,-->
+<!--      CIQ_REG_NO, UNI_SOCIAL_CREDIT_CODE, APL_TYPE,-->
+<!--      NAME_C, NAME_E, RES_C,-->
+<!--      RES_E, NATURE, PRO_ENT,-->
+<!--      BUSI_REG_PLA, SEARCH_ORG_CODE, EMAIL,-->
+<!--      LEG_REP, LEG_REP_IDPASS_NO, LEG_REP_TEL,-->
+<!--      CONTACT, CONTACT_TEL, MANAGE_TYPE,-->
+<!--      APL_MODE, REG_APL_DATE, VISA_AGENCY,-->
+<!--      OBTAIN_AGENCY, NOTE, INDB_TIME,-->
+<!--      UPDATE_TIME)-->
+<!--    values (#{aplNo,jdbcType=VARCHAR}, #{entMgrNo,jdbcType=VARCHAR}, #{regState,jdbcType=VARCHAR},-->
+<!--      #{ciqRegNo,jdbcType=VARCHAR}, #{uniSocialCreditCode,jdbcType=VARCHAR}, #{aplType,jdbcType=VARCHAR},-->
+<!--      #{nameC,jdbcType=VARCHAR}, #{nameE,jdbcType=VARCHAR}, #{resC,jdbcType=VARCHAR},-->
+<!--      #{resE,jdbcType=VARCHAR}, #{nature,jdbcType=VARCHAR}, #{proEnt,jdbcType=VARCHAR},-->
+<!--      #{busiRegPla,jdbcType=VARCHAR}, #{searchOrgCode,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},-->
+<!--      #{legRep,jdbcType=VARCHAR}, #{legRepIdpassNo,jdbcType=VARCHAR}, #{legRepTel,jdbcType=VARCHAR},-->
+<!--      #{contact,jdbcType=VARCHAR}, #{contactTel,jdbcType=VARCHAR}, #{manageType,jdbcType=VARCHAR},-->
+<!--      #{aplMode,jdbcType=VARCHAR}, #{regAplDate,jdbcType=DATE}, #{visaAgency,jdbcType=VARCHAR},-->
+<!--      #{obtainAgency,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, #{indbTime,jdbcType=DATE},-->
+<!--      #{updateTime,jdbcType=DATE})-->
+<!--  </insert>-->
+  <update id="updateForDeclare" parameterType="cn.gov.customs.online.pojo.CspooEntRecord">
+    update CSPOO_ENT_RECORD
+    set REG_STATE = #{regState,jdbcType=VARCHAR},
+      APL_TYPE = #{aplType,jdbcType=VARCHAR},
+    where APL_NO = #{aplNo,jdbcType=VARCHAR}
+  </update>
 </mapper>

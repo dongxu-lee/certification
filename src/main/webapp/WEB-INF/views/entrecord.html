@@ -80,6 +80,12 @@
                     <button class="btn btn-sm btn-primary " type="button" id="cspooEntRecordDelete">
                         <i class="glyphicon glyphicon-trash"></i>&nbsp;删除
                     </button>
+                    <button type="button" class="btn btn-sm btn-primary" id="cspooEntRecordWithdraw">
+                        <i class="fa fa-save"></i>&nbsp;撤回
+                    </button>
+                    <button class="btn btn-sm btn-primary " type="button" id="reviewreceipt">
+                        <i class="glyphicon glyphicon-trash"></i>&nbsp;查看审核回执
+                    </button>
                     <button type="button" class="btn btn-sm btn-primary " id="cspooEntRecordDeclare" style="float: right">
                         <i class="fa fa-upload"></i>&nbsp;申报
                     </button>
@@ -290,6 +296,21 @@
 </body>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        var type = parent
+            .window
+            .document
+            .getElementsByName("iframe0")[0]
+            .getAttribute('enttype');
+        //根据type来实现控件的显示和input的处理
+        if(type == "no") {//未备案
+            $("#cspooEntRecordWithdraw").hide();
+            $("#reviewreceipt").hide();
+        }else if(type == "yes") {//已备案
+            $("#cspooEntRecordSave").prop('disabled', true);
+            $("#cspooEntRecordDelete").prop('disabled', true);
+        }
+
         //企业性质
         $.ajax({
             url: "/entRecord/getAListOfBusinessProperties",
@@ -367,19 +388,86 @@
             type: "POST",
             data: JSON.stringify(saveData),
             success: function(result) {
-                console.log(result);
+                if(result.code == "200") {
+                    alert(result.msg);
+                }else {
+                    alert("暂存失败");
+                }
             }
         })
     });
 
     //删除
     $("#cspooEntRecordDelete").click(function () {
-
+        $.ajax({
+            url: "/entRecord/delete",
+            contentType: "application/json",
+            dateType: "json",
+            type: "POST",
+            //data: $("#aplNo").val(),
+            data: {"aplNo":"1"},
+            success: function(result) {
+                if(result.code == "200") {
+                    alert(result.msg);
+                }else {
+                    alert("删除失败");
+                }
+            }
+        })
     });
 
     //申报
     $("#cspooEntRecordDeclare").click(function () {
+        $.ajax({
+            url: "/entRecord/declare",
+            contentType: "application/json",
+            dateType: "json",
+            type: "POST",
+            data: JSON.stringify(saveData),
+            success: function(result) {
+                if(result.code == "200") {
+                    alert(result.msg);
+                }else {
+                    alert("申报失败");
+                }
+            }
+        })
+    });
 
+    //撤回
+    $("#cspooEntRecordWithdraw").click(function () {
+        $.ajax({
+            url: "/entRecord/withdraw",
+            contentType: "application/json",
+            dateType: "json",
+            type: "POST",
+            //TODO
+            data: {},
+            success: function(result) {
+                if(result.code == "200") {
+                    alert(result.msg);
+                }else {
+                    alert("撤回失败");
+                }
+            }
+        })
+    });
+
+    //查看审核回执
+    $("#reviewreceipt").click(function () {
+        $.ajax({
+            url: "/entRecord/reviewreceipt?aplNo="+$("#aplNo").val(),
+            contentType: "application/json",
+            dateType: "json",
+            type: "GET",
+            success: function(result) {
+                if(result.code == "200") {
+                    alert(result.msg);
+                }else {
+                    alert("查看审核回执失败");
+                }
+            }
+        })
     });
 
 </script>

@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class IndexController {
 
+    @RequestMapping(value = "/loginPage", method = RequestMethod.GET)
+    public String loginPage() {
+        return "login";
+    }
+
     /**
      * 默认初始显示公告页面
      * @return

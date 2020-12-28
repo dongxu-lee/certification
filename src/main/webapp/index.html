@@ -247,13 +247,18 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="entrecord()">提交更改</button>
+                <button type="button" class="btn btn-primary" onclick="entrecord()">确定</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
 
 <script type="text/javascript">
+
+    $(document).ready(function () {
+        var username = '<%= session.getAttribute("ent")%>';
+        alert(username);
+    })
 
     //打开模态框
     function openModal(){
@@ -266,6 +271,7 @@
             //确认备案，进入备案功能页面
             var success = window.frames["iframe0"].document.getElementById("btn-success");
             success.onclick=function () {
+                $('.J_iframe').attr("enttype", "no");
                 $('.J_iframe').attr("src", "entrecord");
             }
             //不备案，返回notice页面
@@ -279,11 +285,12 @@
     function entrecord() {
         //关闭模态框
         $("#myModal").modal("hide");
-        //获取选中的radio
-        var aplNo=$('input:radio[name="optionsRadios"]:checked').val();
+        //获取选中的radio，这里是代替后台做判断当前企业是否备案
+        //所以这个方法以后应该是放在企业备案申请的button上
+        var checkVal=$('input:radio[name="optionsRadios"]:checked').val();
         //判断当前企业是否备案
         $.ajax({
-            url: "/entRecord/checkEntRecord?aplNo=" + aplNo,
+            url: "/entRecord/checkEntRecord?aplNo=" + checkVal,
             contentType: "application/json",
             //data: aplNo1,
             dateType: "json",
@@ -301,6 +308,7 @@
                         break;
                     case "2":
                         //企业已备案
+                        $('.J_iframe').attr("enttype", "yes");
                         $('.J_iframe').attr("src", "entrecord");
                         break;
                     case "3":
